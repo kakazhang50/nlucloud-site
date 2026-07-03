@@ -27,6 +27,10 @@ npm run gen:essays   # regenerate 52 essay stubs from manifest (skips existing)
 
 One paper can map to many essays across columns (`category` + `sourcePaper`).
 
+**Editorial standards (撰写与改稿圣经):** [`docs/EDITORIAL-BIBLE.md`](docs/EDITORIAL-BIBLE.md)
+
+**SEO & GEO:** [`docs/SEO-GEO.md`](docs/SEO-GEO.md)
+
 ## Local port
 
 4323 (Fog Harbor uses 4322).

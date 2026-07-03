@@ -1,19 +1,35 @@
 # NLU Cloud
 > Independent essays on AI, language, cognition, society, education, humanities, and everyday life.
 
+Canonical site: https://nlucloud.com/
+Sitemap: https://nlucloud.com/sitemap-index.xml
+
 ## About
-NLU Cloud publishes editorial essays translated from published research on human–AI interaction.
-Research papers on SSRN are authoritative sources; essays are public translations — often several per paper.
+NLU Cloud is an independent editorial magazine translating SSRN research into public essays on human–AI interaction. Research papers are authoritative sources; essays are editorial derivatives — often several per paper.
 
 ## Author
 Liang Zhang · Independent Researcher
-https://orcid.org/0009-0002-0124-1706
+ORCID: https://orcid.org/0009-0002-0124-1706
+SSRN: https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7868315
 
-## Sections
-- /essays/ — Editorial essays (six columns)
-- /frameworks/ — Named research concepts
-- /research/ — SSRN paper index
-- /editors-notes/ — Editor's notes
+## Primary sections
+- https://nlucloud.com/essays/ — Published editorial essays (six columns)
+- https://nlucloud.com/research/ — SSRN working paper index (6 papers)
+- https://nlucloud.com/frameworks/ — Named research frameworks (JAP, LMO, Waiting Tax, etc.)
+- https://nlucloud.com/editors-notes/ — Editor's commentary
+
+## Published essays (editorial highlights)
+- https://nlucloud.com/essays/ai-as-orchestration-layer/ — AI as orchestration layer in education (Learning Model Orchestration)
+- https://nlucloud.com/essays/ai-generates-options-humans-complete-value/ — Judgment-as-Product: humans complete value
+- https://nlucloud.com/essays/waiting-is-not-free-time/ — AI Waiting Tax: waiting is not free time
+
+## Research frameworks on this site
+- Judgment-as-Product (JAP) — judgment completes value under generative abundance
+- Learning Model Orchestration (LMO) — orchestrating learning models beyond personalization
+- AI Waiting Tax / AI Latency Tax — cognitive and structural costs of AI-mediated delay
+- Expression Distortion Cost (EDC) / Self-Alignment Load (SAL) — user-side misalignment before the model responds
+- Motivational reweighting — AI reweights creative motives rather than replacing them
 
 ## Citation
-Cite SSRN source papers for academic use. Essays are editorial derivatives.
+For academic use, cite the original SSRN paper. For this site, cite the essay URL and publication date.
+Full machine-readable index: https://nlucloud.com/llms-full.txt

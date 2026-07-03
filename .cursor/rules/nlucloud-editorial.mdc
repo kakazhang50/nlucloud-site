@@ -1,0 +1,25 @@
+---
+description: NLU Cloud Essay 撰写与改稿标准 — 编辑 content 前必读
+globs: nlucloud-site/src/content/**/*.md
+alwaysApply: false
+---
+
+# NLU Cloud Editorial
+
+编辑 `src/content/` 下 Markdown 前，**先阅读** `docs/EDITORIAL-BIBLE.md`（完整标准）。
+
+## 快速守则
+
+1. **Essay 正文不要写 `# 标题`** — 标题仅在 frontmatter。
+2. **语气**：学术底层，非论文腔；克制、可引用；AI 能力用 *may / limited / can help*。
+3. **框架 Essay**：含对照表或功能表；关键术语首次加粗；结论勿重复开篇。
+4. **frontmatter 必填**：`title`, `description`, `pubDate`, `category`, `sourcePaper`, `status`；衍生文加 `sourceSection`。
+5. **纯文本交稿**：补 YAML、调标题层级、删重复、加 pull quote（`>`），然后 `npm run build`。
+6. **页脚来源**由 `src/lib/editorial.ts` 自动生成，勿在正文手写 Source 段。
+
+## 样板
+
+- 框架母文：`src/content/essays/ai-as-orchestration-layer.md`
+- 短评：`waiting-is-not-free-time.md`, `ai-generates-options-humans-complete-value.md`
+
+新标准或踩坑后，更新 `docs/EDITORIAL-BIBLE.md` 修订记录。

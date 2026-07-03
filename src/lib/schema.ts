@@ -25,6 +25,7 @@ export function buildJsonLdGraph(
       name: site.siteName,
       description: site.description,
       publisher: { '@id': `${siteUrl}/#organization` },
+      inLanguage: 'en-US',
     },
     {
       '@type': 'Organization',
