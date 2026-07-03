@@ -1,0 +1,32 @@
+---
+import type { ResearchPaperEntry } from '@/lib/content';
+
+interface Props {
+  paper: ResearchPaperEntry;
+}
+
+const { paper } = Astro.props;
+---
+
+<article class="feed-item group">
+  <p class="folio">SSRN {paper.data.ssrnId}</p>
+  <h3 class="feed-title mt-1.5">
+    <a href={`/research/${paper.slug}/`}>{paper.data.title}</a>
+  </h3>
+  <p class="mt-2 max-w-prose text-sm leading-relaxed text-ink-muted line-clamp-2">
+    {paper.data.description}
+  </p>
+  <p class="feed-meta">
+    {
+      paper.data.views != null && (
+        <>
+          <span>{paper.data.views} views</span>
+          <span class="mx-2 ornament">·</span>
+        </>
+      )
+    }
+    <a href={paper.data.ssrnUrl} class="link-editorial text-xs" target="_blank" rel="noopener noreferrer">
+      SSRN
+    </a>
+  </p>
+</article>

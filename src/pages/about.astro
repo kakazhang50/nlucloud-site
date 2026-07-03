@@ -1,0 +1,27 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site } from '@/lib/site';
+---
+
+<BaseLayout title="About" breadcrumbs={[{ name: 'About', path: '/about/' }]}>
+  <div class="page-shell py-4 sm:py-5">
+    <div class="page-main">
+      <p class="folio mb-4">About</p>
+      <div class="prose-nlu">
+      <p>{site.description}</p>
+      <h2>Author</h2>
+      <p>
+        <strong>{site.author}</strong> — Independent Researcher<br />
+        <a href={`mailto:${site.authorEmail}`}>{site.authorEmail}</a><br />
+        <a href={site.orcidUrl}>ORCID</a> · <a href={site.ssrnAuthorUrl}>SSRN</a>
+      </p>
+      <h2>How this site works</h2>
+      <p>
+        NLU Cloud publishes essays translated from formal research. One paper can yield many essays
+        across different columns. Papers on <a href="/research/">SSRN</a> are authoritative; essays
+        are public translations. <a href="/editorial-policy/">Editorial policy</a>.
+      </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

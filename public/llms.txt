@@ -1,0 +1,19 @@
+# NLU Cloud
+> Independent essays on AI, language, cognition, society, education, humanities, and everyday life.
+
+## About
+NLU Cloud publishes editorial essays translated from published research on human–AI interaction.
+Research papers on SSRN are authoritative sources; essays are public translations — often several per paper.
+
+## Author
+Liang Zhang · Independent Researcher
+https://orcid.org/0009-0002-0124-1706
+
+## Sections
+- /essays/ — Editorial essays (six columns)
+- /frameworks/ — Named research concepts
+- /research/ — SSRN paper index
+- /editors-notes/ — Editor's notes
+
+## Citation
+Cite SSRN source papers for academic use. Essays are editorial derivatives.

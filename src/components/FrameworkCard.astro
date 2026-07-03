@@ -1,0 +1,17 @@
+---
+import type { FrameworkEntry } from '@/lib/content';
+
+interface Props {
+  framework: FrameworkEntry;
+}
+
+const { framework } = Astro.props;
+---
+
+<article class="card-surface">
+  <p class="text-xs font-semibold uppercase tracking-wider text-accent-gold">{framework.data.abbreviation}</p>
+  <h3 class="mt-2 font-serif text-lg font-semibold">
+    <a href={`/frameworks/${framework.slug}/`} class="hover:text-forest">{framework.data.title}</a>
+  </h3>
+  <p class="mt-2 text-sm text-ink-muted">{framework.data.description}</p>
+</article>

@@ -1,0 +1,21 @@
+---
+import { formatDate } from '@/lib/site';
+import { getCategoryMeta } from '@/data/categories';
+import type { EssayEntry } from '@/lib/content';
+
+interface Props {
+  essay: EssayEntry;
+}
+
+const { essay } = Astro.props;
+const cat = getCategoryMeta(essay.data.category);
+---
+
+<article class="card-surface flex h-full flex-col">
+  <p class="section-label">{cat.label}</p>
+  <h3 class="mt-2 font-serif text-xl font-semibold leading-snug text-ink">
+    <a href={`/essays/${essay.slug}/`} class="hover:text-forest">{essay.data.title}</a>
+  </h3>
+  <p class="mt-2 flex-1 text-sm leading-relaxed text-ink-muted">{essay.data.description}</p>
+  <p class="mt-4 text-xs text-ink-muted">{formatDate(essay.data.pubDate)}</p>
+</article>

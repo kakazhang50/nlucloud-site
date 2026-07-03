@@ -1,0 +1,98 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import EssayFeedItem from '@/components/EssayFeedItem.astro';
+import { formatDate } from '@/lib/site';
+import { getEssaysBySourcePaper } from '@/lib/content';
+import { scholarlyArticleJsonLd, buildJsonLdGraph } from '@/lib/schema';
+import { site } from '@/lib/site';
+
+export async function getStaticPaths() {
+  const papers = await getCollection('researchPapers');
+  return papers.map((paper) => ({ params: { slug: paper.slug }, props: { paper } }));
+}
+
+const { paper } = Astro.props;
+const { Content } = await render(paper);
+const relatedEssays = await getEssaysBySourcePaper(paper.slug);
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? `https://${site.domain}`;
+const pageUrl = new URL(`/research/${paper.slug}/`, Astro.site).href;
+const schemaExtra = [
+  scholarlyArticleJsonLd(
+    {
+      title: paper.data.title,
+      description: paper.data.description,
+      ssrnUrl: paper.data.ssrnUrl,
+      datePublished: paper.data.pubDate.toISOString(),
+    },
+    pageUrl,
+    siteUrl,
+  ),
+];
+---
+
+<BaseLayout
+  title={paper.data.title}
+  description={paper.data.description}
+  breadcrumbs={[
+    { name: 'Research', path: '/research/' },
+    { name: paper.data.title, path: `/research/${paper.slug}/` },
+  ]}
+  extraSchema={schemaExtra}
+>
+  <article class="py-8 sm:py-10">
+    <header class="article-header px-5">
+      <p class="folio">SSRN {paper.data.ssrnId}</p>
+      <h1 class="hero-title mt-3">{paper.data.title}</h1>
+      <p class="deck mx-auto mt-4 max-w-prose">{paper.data.description}</p>
+      <p class="feed-meta mt-5">
+        {formatDate(paper.data.pubDate)}
+        <span class="mx-2 ornament">·</span>
+        {site.author}
+      </p>
+      <a
+        href={paper.data.ssrnUrl}
+        class="link-editorial mt-6 inline-block"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read full paper on SSRN
+      </a>
+      <div class="mx-auto mt-6 max-w-xs border-t border-line"></div>
+    </header>
+
+    <div class="page-narrow mt-8">
+      <div class="prose-nlu">
+        <Content />
+      </div>
+
+      {
+        paper.data.frameworks.length > 0 && (
+          <div class="mt-10 border-t border-line pt-6">
+            <p class="folio mb-4">Frameworks</p>
+            <ul class="space-y-2">
+              {
+                paper.data.frameworks.map((fw) => (
+                  <li>
+                    <a href={`/frameworks/${fw}/`} class="link-editorial">
+                      {fw}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        )
+      }
+
+      {
+        relatedEssays.length > 0 && (
+          <div class="mt-10 border-t border-line pt-8">
+            <p class="folio mb-4">Essays from this research</p>
+            {relatedEssays.map((essay) => <EssayFeedItem essay={essay} />)}
+          </div>
+        )
+      }
+    </div>
+  </article>
+</BaseLayout>

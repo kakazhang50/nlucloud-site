@@ -1,0 +1,47 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getResearchPaper } from '@/lib/content';
+
+export async function getStaticPaths() {
+  const items = await getCollection('frameworks', ({ data }) => data.status === 'published');
+  return items.map((fw) => ({ params: { slug: fw.slug }, props: { fw } }));
+}
+
+const { fw } = Astro.props;
+const { Content } = await render(fw);
+const paper = await getResearchPaper(fw.data.sourcePaper);
+---
+
+<BaseLayout
+  title={fw.data.title}
+  description={fw.data.description}
+  breadcrumbs={[
+    { name: 'Frameworks', path: '/frameworks/' },
+    { name: fw.data.abbreviation, path: `/frameworks/${fw.slug}/` },
+  ]}
+>
+  <article class="py-8 sm:py-10">
+    <header class="article-header px-5">
+      <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-accent-rust">{fw.data.abbreviation}</p>
+      <h1 class="hero-title mt-2">{fw.data.title}</h1>
+      <p class="deck mx-auto mt-4 max-w-prose">{fw.data.description}</p>
+      <div class="mx-auto mt-6 max-w-xs border-t border-line"></div>
+    </header>
+    <div class="page-narrow mt-8">
+      <div class="prose-nlu">
+        <Content />
+      </div>
+      {
+        paper && (
+          <p class="source-note">
+            <span class="folio">Source </span>
+            <a href={`/research/${paper.slug}/`} class="link-editorial">
+              {paper.data.title}
+            </a>
+          </p>
+        )
+      }
+    </div>
+  </article>
+</BaseLayout>

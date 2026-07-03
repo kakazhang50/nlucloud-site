@@ -1,0 +1,34 @@
+---
+import ColumnMark from '@/components/ColumnMark.astro';
+import AuthorByline from '@/components/AuthorByline.astro';
+import { getCategoryMeta } from '@/data/categories';
+import type { EssayEntry } from '@/lib/content';
+
+interface Props {
+  essay: EssayEntry;
+  featured?: boolean;
+}
+
+const { essay, featured = false } = Astro.props;
+const cat = getCategoryMeta(essay.data.category);
+---
+
+<article class:list={['group', featured ? '' : 'feed-item']}>
+  <ColumnMark accent={cat.accent} label={cat.label} />
+  <h2 class:list={[featured ? 'mt-3 font-display text-[1.5rem] font-semibold leading-snug sm:text-[1.75rem]' : 'feed-title mt-2']}>
+    <a href={`/essays/${essay.slug}/`} class="text-ink transition hover:text-forest">{essay.data.title}</a>
+  </h2>
+  <p
+    class:list={[
+      featured
+        ? 'deck mt-2 max-w-prose'
+        : 'mt-2 max-w-prose font-serif text-[0.9375rem] leading-relaxed text-ink-muted',
+    ]}
+  >
+    {essay.data.description}
+  </p>
+  <div class="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1">
+    <AuthorByline date={essay.data.pubDate} class="!mt-0" />
+    <a href={`/essays/${essay.slug}/`} class="font-mono text-xs tracking-wide text-forest hover:underline">Read</a>
+  </div>
+</article>

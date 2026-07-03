@@ -1,0 +1,27 @@
+---
+import type { ResearchPaperEntry } from '@/lib/content';
+
+interface Props {
+  paper: ResearchPaperEntry;
+}
+
+const { paper } = Astro.props;
+---
+
+<article class="card-surface flex h-full flex-col">
+  <p class="section-label">SSRN {paper.data.ssrnId}</p>
+  <h3 class="mt-2 font-serif text-lg font-semibold leading-snug">
+    <a href={`/research/${paper.slug}/`} class="hover:text-forest">{paper.data.title}</a>
+  </h3>
+  <p class="mt-2 flex-1 text-sm leading-relaxed text-ink-muted line-clamp-3">{paper.data.description}</p>
+  <div class="mt-4 flex flex-wrap items-center gap-3 text-xs text-ink-muted">
+    {
+      paper.data.views != null && (
+        <span>{paper.data.views} views</span>
+      )
+    }
+    <a href={paper.data.ssrnUrl} class="font-medium text-forest hover:underline" target="_blank" rel="noopener noreferrer">
+      Read on SSRN →
+    </a>
+  </div>
+</article>

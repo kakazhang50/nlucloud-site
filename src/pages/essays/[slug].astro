@@ -1,0 +1,91 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ColumnMark from '@/components/ColumnMark.astro';
+import AuthorByline from '@/components/AuthorByline.astro';
+import { getCategoryMeta } from '@/data/categories';
+import { getResearchPaper } from '@/lib/content';
+
+export async function getStaticPaths() {
+  const essays = await getCollection('essays', ({ data }) => data.status === 'published');
+  return essays.map((essay) => ({
+    params: { slug: essay.slug },
+    props: { essay },
+  }));
+}
+
+const { essay } = Astro.props;
+const { Content } = await render(essay);
+const cat = getCategoryMeta(essay.data.category);
+const paper = await getResearchPaper(essay.data.sourcePaper);
+---
+
+<BaseLayout
+  title={essay.data.title}
+  description={essay.data.description}
+  ogType="article"
+  breadcrumbs={[
+    { name: 'Essays', path: '/essays/' },
+    { name: essay.data.title, path: `/essays/${essay.slug}/` },
+  ]}
+  article={{
+    headline: essay.data.title,
+    description: essay.data.description,
+    datePublished: essay.data.pubDate.toISOString(),
+  }}
+>
+  <article class="py-8 sm:py-10">
+    <header class="article-header px-5">
+      <ColumnMark accent={cat.accent} label={cat.label} class="centered" />
+      <h1 class="hero-title mt-4">{essay.data.title}</h1>
+      <p class="deck mx-auto mt-4 max-w-prose">{essay.data.description}</p>
+      <div class="mt-5 flex justify-center">
+        <AuthorByline date={essay.data.pubDate} />
+      </div>
+      <div class="mx-auto mt-6 max-w-xs border-t border-line" aria-hidden="true"></div>
+    </header>
+
+    <div class="page-narrow mt-8 sm:mt-9">
+      <div class="prose-nlu">
+        <Content />
+      </div>
+
+      <footer class="source-note">
+        <p class="folio mb-3">Source</p>
+        {
+          paper ? (
+            <p>
+              <a href={`/research/${paper.slug}/`} class="font-serif text-ink hover:text-forest">
+                {paper.data.title}
+              </a>
+            </p>
+          ) : (
+            <p>{essay.data.sourcePaper}</p>
+          )
+        }
+        {
+          paper && (
+            <p class="mt-2">
+              <a href={paper.data.ssrnUrl} class="link-editorial" target="_blank" rel="noopener noreferrer">
+                Read full paper on SSRN
+              </a>
+            </p>
+          )
+        }
+        {
+          essay.data.frameworks?.length ? (
+            <p class="mt-4 text-xs">
+              Frameworks:{' '}
+              {essay.data.frameworks.map((fw, i) => (
+                <>
+                  {i > 0 && ', '}
+                  <a href={`/frameworks/${fw}/`} class="text-forest hover:underline">{fw}</a>
+                </>
+              ))}
+            </p>
+          ) : null
+        }
+      </footer>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,13 @@
+{
+  "siteName": "NLU Cloud",
+  "domain": "nlucloud.com",
+  "tagline": "Natural Language Understanding for Humans",
+  "subtitle": "Independent essays on AI, language, cognition, society, education, humanities, and everyday life.",
+  "description": "NLU Cloud is an independent editorial site exploring how artificial intelligence understands language, how that changes human cognition, and what it means for education, society, and everyday life. Essays are drawn from published research on SSRN.",
+  "author": "Liang Zhang",
+  "authorEmail": "zl10161983@gmail.com",
+  "orcid": "0009-0002-0124-1706",
+  "orcidUrl": "https://orcid.org/0009-0002-0124-1706",
+  "ssrnAuthorUrl": "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7868315",
+  "cloudflareWebAnalyticsToken": ""
+}

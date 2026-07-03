@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getPublishedFrameworks } from '@/lib/content';
+
+const frameworks = await getPublishedFrameworks();
+---
+
+<BaseLayout
+  title="Frameworks"
+  description="Core concepts from published research — reference pages for essays and SSRN papers."
+  breadcrumbs={[{ name: 'Frameworks', path: '/frameworks/' }]}
+>
+  <div class="page-shell py-4 sm:py-5">
+    <div class="page-main divide-y divide-line">
+      <p class="folio pb-3">Frameworks</p>
+      {
+        frameworks.map((fw) => (
+          <article class="py-4">
+            <a href={`/frameworks/${fw.slug}/`} class="group block">
+              <span class="font-mono text-[11px] uppercase tracking-[0.14em] text-accent-rust">
+                {fw.data.abbreviation}
+              </span>
+              <h2 class="mt-1 font-serif text-lg font-semibold text-ink group-hover:text-forest">
+                {fw.data.title}
+              </h2>
+              <p class="mt-1 text-sm leading-relaxed text-ink-muted">{fw.data.description}</p>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

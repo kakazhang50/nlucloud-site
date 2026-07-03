@@ -1,0 +1,51 @@
+---
+import { essayCategories } from '@/data/categories';
+import type { EssayCategory } from '@/content/config';
+
+interface Props {
+  active?: EssayCategory | null;
+  basePath?: string;
+  variant?: 'default' | 'compact';
+  showAll?: boolean;
+}
+
+const { active = null, basePath = '/essays/', variant = 'default', showAll = true } = Astro.props;
+const compact = variant === 'compact';
+---
+
+<nav
+  class:list={[
+    'column-tabs',
+    compact ? 'column-tabs-compact' : 'flex flex-wrap gap-x-5 gap-y-2 border-b border-line pb-4',
+  ]}
+  aria-label="Columns"
+>
+  {
+    showAll && (
+      <a
+        href={basePath}
+        class:list={[
+          compact ? 'column-tab' : 'section-nav-link',
+          !active && 'column-tab-active section-nav-link-active font-medium',
+        ]}
+      >
+        All
+      </a>
+    )
+  }
+  {
+    essayCategories.map((cat) => (
+      <a
+        href={`${basePath}?category=${cat.slug}`}
+        class:list={[
+          compact ? 'column-tab' : 'section-nav-link',
+          compact && `column-tab-${cat.accent}`,
+          active === cat.slug && 'column-tab-active section-nav-link-active font-medium',
+        ]}
+        title={cat.label}
+      >
+        {compact ? cat.tabLabel : cat.label}
+      </a>
+    ))
+  }
+</nav>

@@ -1,0 +1,28 @@
+---
+import { site } from '@/lib/site';
+import { currentIssue } from '@/data/magazine';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-10 border-t-2 border-forest/10 bg-paper-deep/50">
+  <div class="page-shell py-8 sm:py-9">
+    <div class="mx-auto max-w-narrow text-center">
+      <p class="font-display text-lg font-semibold text-ink">{site.siteName}</p>
+      <p class="folio mt-2">{currentIssue.label} · {currentIssue.monthYear}</p>
+      <p class="mt-2 text-sm leading-relaxed text-ink-muted">{site.subtitle}</p>
+      <div class="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-ink-faint">
+        <a href="/essays/" class="hover:text-forest">Essays</a>
+        <span class="ornament" aria-hidden="true">·</span>
+        <a href="/research/" class="hover:text-forest">Research</a>
+        <span class="ornament" aria-hidden="true">·</span>
+        <a href="/editorial-policy/" class="hover:text-forest">Policy</a>
+        <span class="ornament" aria-hidden="true">·</span>
+        <a href="/llms.txt" class="hover:text-forest">llms.txt</a>
+      </div>
+      <p class="folio mt-5">
+        © {year} {site.author}
+      </p>
+    </div>
+  </div>
+</footer>

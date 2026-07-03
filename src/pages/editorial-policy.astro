@@ -1,0 +1,34 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Editorial Policy" breadcrumbs={[{ name: 'Editorial Policy', path: '/editorial-policy/' }]}>
+  <div class="page-shell py-4 sm:py-5">
+    <div class="page-main">
+      <p class="folio mb-4">Editorial Policy</p>
+      <div class="prose-nlu">
+      <h2>Source material</h2>
+      <p>
+        Essays and framework pages are derived from published or forthcoming academic research, primarily
+        SSRN working papers by Liang Zhang. They are not substitutes for the full papers.
+      </p>
+      <h2>One paper, many essays</h2>
+      <p>
+        A single research paper may be translated into multiple essays placed in different columns when
+        the same argument speaks to different professional audiences — for example, a latency paper may
+        yield both a society essay on justice and a life essay on everyday waiting.
+      </p>
+      <h2>Citation</h2>
+      <p>
+        For academic citation, use the original SSRN paper. For general reference to an essay on this
+        site, cite the essay URL and date published.
+      </p>
+      <h2>Editor's Notes</h2>
+      <p>
+        Editor's Notes are editorial commentary on the research program. They may precede or synthesize
+        formal papers and are clearly labeled as editor's writing.
+      </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

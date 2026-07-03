@@ -1,0 +1,15 @@
+---
+import { currentIssue } from '@/data/magazine';
+---
+
+<div class="issue-band">
+  <div class="page-shell">
+    <p class="issue-band-text">
+      <span class="issue-band-label">{currentIssue.label}</span>
+      <span class="ornament mx-2" aria-hidden="true">·</span>
+      <span>{currentIssue.monthYear}</span>
+      <span class="ornament mx-2" aria-hidden="true">·</span>
+      <span class="issue-band-theme">{currentIssue.title}</span>
+    </p>
+  </div>
+</div>

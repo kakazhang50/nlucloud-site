@@ -1,0 +1,72 @@
+---
+import { site } from '@/lib/site';
+
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/essays/', label: 'Essays' },
+  { href: '/frameworks/', label: 'Frameworks' },
+  { href: '/research/', label: 'Research' },
+  { href: '/editors-notes/', label: 'Notes' },
+  { href: '/about/', label: 'About' },
+];
+
+function isNavActive(href: string): boolean {
+  if (href === '/') return current === '/' || current === '';
+  return current.startsWith(href);
+}
+
+const current = Astro.url.pathname;
+const isHome = current === '/' || current === '';
+---
+
+<header class="bg-paper">
+  <div class="brand-stripe" aria-hidden="true"></div>
+  <div class="page-shell">
+    <div class="masthead-rule" class:list={[isHome ? 'pt-4' : 'pt-3']}>
+      <div
+        class:list={[
+          'flex flex-col items-center text-center',
+          isHome ? 'py-4 sm:py-5' : 'py-2 sm:py-2.5',
+        ]}
+      >
+        {isHome && <p class="folio">Independent Research · Editorial Essays</p>}
+        <a
+          href="/"
+          class:list={[
+            'masthead-name block',
+            isHome ? 'mt-2 text-[2rem] sm:text-[2.25rem]' : 'text-xl sm:text-[1.5rem]',
+          ]}
+        >
+          {site.siteName}
+        </a>
+        {isHome && (
+          <p class="mt-1.5 max-w-md font-serif text-sm italic text-ink-muted">{site.tagline}</p>
+        )}
+      </div>
+    </div>
+
+    <nav
+      class:list={[
+        'flex flex-wrap items-center justify-center gap-x-5 gap-y-1 border-y border-line',
+        isHome ? 'py-2.5' : 'py-2',
+      ]}
+      aria-label="Main"
+    >
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'text-[13px] font-medium tracking-wide transition',
+              isNavActive(item.href)
+                ? 'font-semibold text-forest'
+                : 'text-ink-muted hover:text-ink',
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

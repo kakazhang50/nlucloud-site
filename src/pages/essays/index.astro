@@ -1,0 +1,55 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import IssueBand from '@/components/IssueBand.astro';
+import EssayFeedItem from '@/components/EssayFeedItem.astro';
+import SectionNav from '@/components/SectionNav.astro';
+import { essayCategories, getCategoryMeta } from '@/data/categories';
+import { getPublishedEssays } from '@/lib/content';
+import type { EssayCategory } from '@/content/config';
+
+const essays = await getPublishedEssays();
+const filter = Astro.url.searchParams.get('category');
+const activeCategory = essayCategories.some((c) => c.slug === filter)
+  ? (filter as EssayCategory)
+  : null;
+const filtered = activeCategory
+  ? essays.filter((e) => e.data.category === activeCategory)
+  : essays;
+---
+
+<BaseLayout
+  title="Essays"
+  description="Editorial essays drawn from published research on human–AI interaction, judgment, latency, learning, and creativity."
+  breadcrumbs={[{ name: 'Essays', path: '/essays/' }]}
+>
+  <IssueBand />
+
+  <div class="page-shell py-4 sm:py-5">
+    <div class="page-main">
+      <SectionNav active={activeCategory} variant="compact" />
+
+      {
+        activeCategory && (
+          <p class="mt-2 font-serif text-sm italic text-ink-muted">
+            {getCategoryMeta(activeCategory).question}
+          </p>
+        )
+      }
+
+      {
+        filtered.length > 0 ? (
+          <div class="mt-4">
+            {filtered.map((essay) => (
+              <EssayFeedItem essay={essay} />
+            ))}
+          </div>
+        ) : (
+          <p class="mt-8 text-sm leading-relaxed text-ink-muted">
+            No essays in this column yet.
+            <a href="/research/" class="link-editorial mt-2 inline-block">Read the source papers on SSRN</a>
+          </p>
+        )
+      }
+    </div>
+  </div>
+</BaseLayout>

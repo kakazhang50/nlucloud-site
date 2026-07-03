@@ -1,0 +1,26 @@
+{
+  "name": "nlucloud-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/gen-llms-full.mjs",
+    "preview": "astro preview",
+    "check": "astro check",
+    "gen:essays": "node scripts/gen-essay-stubs.mjs",
+    "publish": "node scripts/publish.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/tailwind": "^6.0.2",
+    "@tailwindcss/typography": "^0.5.16",
+    "astro": "^5.12.0",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3",
+    "zod": "^3.24.0"
+  }
+}

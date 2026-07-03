@@ -1,0 +1,20 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ResearchListItem from '@/components/ResearchListItem.astro';
+import { getResearchPapers } from '@/lib/content';
+
+const papers = await getResearchPapers();
+---
+
+<BaseLayout
+  title="Research"
+  description="Published research on SSRN — source papers behind NLU Cloud essays and frameworks."
+  breadcrumbs={[{ name: 'Research', path: '/research/' }]}
+>
+  <div class="page-shell py-4 sm:py-5">
+    <div class="page-main">
+      <p class="folio mb-3">SSRN · {papers.length} papers</p>
+      {papers.map((paper) => <ResearchListItem paper={paper} />)}
+    </div>
+  </div>
+</BaseLayout>

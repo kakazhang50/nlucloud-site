@@ -1,0 +1,18 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site } from '@/lib/site';
+---
+
+<BaseLayout title="Privacy" breadcrumbs={[{ name: 'Privacy', path: '/privacy/' }]}>
+  <div class="page-shell py-12 max-w-prose prose-nlu">
+    <h1>Privacy Policy</h1>
+    <p>
+      {site.siteName} is a static editorial website. We do not collect personal data through account
+      registration on this site.
+    </p>
+    <p>
+      If Cloudflare Web Analytics is enabled, anonymous usage metrics may be collected by Cloudflare.
+      Contact: <a href={`mailto:${site.authorEmail}`}>{site.authorEmail}</a>.
+    </p>
+  </div>
+</BaseLayout>

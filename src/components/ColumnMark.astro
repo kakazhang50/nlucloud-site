@@ -1,0 +1,17 @@
+---
+import type { ColumnAccent } from '@/data/categories';
+
+interface Props {
+  accent: ColumnAccent;
+  label: string;
+  class?: string;
+}
+
+const { accent, label, class: className } = Astro.props;
+const accentClass = `column-mark-${accent}`;
+---
+
+<p class:list={['column-mark', accentClass, className]}>
+  <span class="column-mark-bar" aria-hidden="true"></span>
+  <span class="column-mark-label">{label}</span>
+</p>

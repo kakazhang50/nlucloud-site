@@ -1,0 +1,46 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { formatDate, site } from '@/lib/site';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('editorNotes', ({ data }) => data.status === 'published');
+  return notes.map((note) => ({ params: { slug: note.slug }, props: { note } }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+---
+
+<BaseLayout
+  title={note.data.title}
+  description={note.data.description}
+  ogType="article"
+  breadcrumbs={[
+    { name: "Editor's Notes", path: '/editors-notes/' },
+    { name: note.data.title, path: `/editors-notes/${note.slug}/` },
+  ]}
+  article={{
+    headline: note.data.title,
+    description: note.data.description,
+    datePublished: note.data.pubDate.toISOString(),
+  }}
+>
+  <article class="py-8 sm:py-10">
+    <header class="article-header px-5">
+      <p class="folio">Editor's Note</p>
+      <h1 class="hero-title mt-3">{note.data.title}</h1>
+      <p class="feed-meta mt-5">
+        {site.author}
+        <span class="mx-2 ornament">·</span>
+        {formatDate(note.data.pubDate)}
+      </p>
+      <div class="mx-auto mt-6 max-w-xs border-t border-line"></div>
+    </header>
+    <div class="page-narrow mt-8">
+      <div class="prose-nlu">
+        <Content />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

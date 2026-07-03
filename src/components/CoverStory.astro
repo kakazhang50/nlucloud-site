@@ -1,0 +1,33 @@
+---
+import ColumnMark from '@/components/ColumnMark.astro';
+import AuthorByline from '@/components/AuthorByline.astro';
+import { getCategoryMeta } from '@/data/categories';
+import { currentIssue } from '@/data/magazine';
+import type { EssayEntry } from '@/lib/content';
+
+interface Props {
+  essay: EssayEntry;
+}
+
+const { essay } = Astro.props;
+const cat = getCategoryMeta(essay.data.category);
+---
+
+<article class="cover-story">
+  <div class:list={['cover-story-inner', `cover-story-accent-${cat.accent}`]}>
+    <p class="cover-story-folio">
+      {currentIssue.label}
+      <span class="ornament mx-2" aria-hidden="true">—</span>
+      Cover Essay
+    </p>
+    <ColumnMark accent={cat.accent} label={cat.label} class="mt-4" />
+    <h2 class="cover-story-title mt-3">
+      <a href={`/essays/${essay.slug}/`}>{essay.data.title}</a>
+    </h2>
+    <p class="cover-story-deck mt-3">{essay.data.description}</p>
+    <div class="mt-5 flex flex-wrap items-center justify-between gap-3">
+      <AuthorByline date={essay.data.pubDate} />
+      <a href={`/essays/${essay.slug}/`} class="cover-story-cta">Read essay</a>
+    </div>
+  </div>
+</article>

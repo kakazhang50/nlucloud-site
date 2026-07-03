@@ -1,0 +1,18 @@
+---
+import { formatDate } from '@/lib/site';
+import { site } from '@/lib/site';
+
+interface Props {
+  date: Date;
+  author?: string;
+  class?: string;
+}
+
+const { date, author = site.author, class: className } = Astro.props;
+---
+
+<p class:list={['author-byline', className]}>
+  <span class="author-byline-name">By {author}</span>
+  <span class="ornament mx-2" aria-hidden="true">·</span>
+  <time datetime={date.toISOString()}>{formatDate(date)}</time>
+</p>
