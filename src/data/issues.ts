@@ -111,7 +111,7 @@ export const coreIssues: MagazineIssue[] = [
     theme: 'AI does not replace creative motives. It reweights what each motive costs to act on.',
     editorLede:
       'Generative AI is often framed as a threat to creativity. A better frame: three long-standing motives — expression, feedback, and outcome — coexist, and AI changes their activation costs and institutional rewards.',
-    status: 'planned',
+    status: 'published',
     sourcePaper: 'creative-motivation',
     ssrnId: '6536198',
     coverEssaySlug: 'creative-motivation-flagship',

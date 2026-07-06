@@ -6,7 +6,7 @@ category: language-understanding
 sourcePaper: self-distortion
 sourceSection: "§1–8"
 status: published
-featured: true
+featured: false
 issueNumber: 5
 issueRole: cover
 frameworks: [expression-distortion-cost, self-alignment-load, authenticity-cost-model]
