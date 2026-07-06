@@ -63,7 +63,7 @@ export const coreIssues: MagazineIssue[] = [
     theme: 'Waiting for AI is not free time — it is suspended attention with cognitive cost.',
     editorLede:
       'Artificial intelligence is sold as speed. Yet daily use brings spinners, blank pauses, and suspended attention. Before policy asks who waits longer, we must name what waiting does to the human on the other side.',
-    status: 'planned',
+    status: 'published',
     sourcePaper: 'ai-waiting-tax',
     ssrnId: '5401725',
     coverEssaySlug: 'waiting-tax-flagship',
