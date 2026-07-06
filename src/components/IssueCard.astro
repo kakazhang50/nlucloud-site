@@ -1,0 +1,126 @@
+---
+import type { MagazineIssue } from '@/data/issues';
+import { issuePath } from '@/data/issues';
+import { issueCoverPath } from '@/lib/covers';
+import type { EssayEntry } from '@/lib/issues';
+
+interface Props {
+  issue: MagazineIssue;
+  essay?: EssayEntry;
+  /** Highlight current / latest issue */
+  current?: boolean;
+}
+
+const { issue, essay, current = false } = Astro.props;
+const cover = issueCoverPath(issue.number);
+const href = issuePath(issue.number);
+---
+
+<article class:list={['issue-card', current && 'issue-card-current']}>
+  <a href={href} class="issue-card-link group">
+    <div class="issue-card-cover-wrap">
+      <img
+        src={cover}
+        alt={`${issue.label}: ${issue.title}`}
+        width="400"
+        height="600"
+        class="issue-card-cover"
+        loading="lazy"
+        decoding="async"
+      />
+      {!essay && issue.status === 'planned' && (
+        <span class="issue-card-badge">Forthcoming</span>
+      )}
+    </div>
+    <div class="issue-card-meta">
+      <p class="folio">{issue.label}</p>
+      <p class="issue-card-date">{issue.monthYear}</p>
+      <h3 class="issue-card-title">{issue.title}</h3>
+      <p class="issue-card-essay">
+        {essay ? issue.coverEssayTitle : `Forthcoming: ${issue.coverEssayTitle}`}
+      </p>
+    </div>
+  </a>
+</article>
+
+<style>
+  .issue-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .issue-card-cover-wrap {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #d8d0c4;
+    background: #faf6ef;
+    transition: box-shadow 0.25s ease;
+  }
+
+  .issue-card-link:hover .issue-card-cover-wrap {
+    box-shadow: 0 8px 28px rgba(21, 41, 33, 0.12);
+  }
+
+  .issue-card-cover {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .issue-card-link:hover .issue-card-cover {
+    transform: scale(1.02);
+  }
+
+  .issue-card-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.2rem 0.45rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.5625rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #faf6ef;
+    background: rgba(26, 24, 22, 0.72);
+  }
+
+  .issue-card-meta {
+    margin-top: 0.75rem;
+  }
+
+  .issue-card-date {
+    margin-top: 0.15rem;
+    font-size: 0.6875rem;
+    color: #8a847c;
+  }
+
+  .issue-card-title {
+    margin-top: 0.35rem;
+    font-family: Fraunces, Georgia, serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #1a1816;
+    transition: color 0.15s;
+  }
+
+  .issue-card-link:hover .issue-card-title {
+    color: #1e3a2f;
+  }
+
+  .issue-card-essay {
+    margin-top: 0.35rem;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: #5c5752;
+  }
+
+  .issue-card-current .issue-card-cover-wrap {
+    outline: 2px solid #1e3a2f;
+    outline-offset: 2px;
+  }
+</style>

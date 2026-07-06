@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" role="img" aria-labelledby="coverTitle04">
+  <title id="coverTitle04">Issue 04 — The Latency Tax</title>
+  <defs>
+    <linearGradient id="bg04" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#241418"/>
+      <stop offset="55%" stop-color="#2E1C20"/>
+      <stop offset="100%" stop-color="#382428"/>
+    </linearGradient>
+    <linearGradient id="gold04" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A8895A"/>
+      <stop offset="50%" stop-color="#C4A574"/>
+      <stop offset="100%" stop-color="#A8895A"/>
+    </linearGradient>
+    <pattern id="weave04" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
+      <line x1="0" y1="0" x2="0" y2="24" stroke="#F0E6D4" stroke-opacity="0.03" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="1200" fill="url(#bg04)"/>
+  <rect width="800" height="1200" fill="url(#weave04)"/>
+  <rect x="64" y="72" width="672" height="3" fill="url(#gold04)"/>
+  <rect x="64" y="76" width="672" height="1" fill="#F0E6D4" fill-opacity="0.15"/>
+  <text x="400" y="118" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.72" font-family="Georgia, serif" font-size="13" letter-spacing="5.5">NLUCLOUD</text>
+  <text x="400" y="142" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.55" font-family="Georgia, serif" font-size="11" letter-spacing="3.8">AI &amp; SOCIETY REVIEW</text>
+  <text x="400" y="196" text-anchor="middle" fill="#C4A574" font-family="monospace" font-size="12" letter-spacing="4.2">ISSUE 04 · APRIL 2026</text>
+  
+  <g opacity="0.85">
+    <line x1="140" y1="520" x2="660" y2="520" stroke="#C4A574" stroke-opacity="0.2" stroke-width="1"/>
+    <rect x="160" y="320" width="60" height="200" fill="#7A4048" fill-opacity="0.12" stroke="#C4A574" stroke-opacity="0.2" stroke-width="1"/>
+    <rect x="280" y="380" width="60" height="140" fill="#7A4048" fill-opacity="0.18" stroke="#C4A574" stroke-opacity="0.25" stroke-width="1"/>
+    <rect x="400" y="340" width="60" height="180" fill="#7A4048" fill-opacity="0.15" stroke="#C4A574" stroke-opacity="0.22" stroke-width="1"/>
+    <rect x="520" y="400" width="60" height="120" fill="#7A4048" fill-opacity="0.22" stroke="#C4A574" stroke-opacity="0.3" stroke-width="1"/>
+    <rect x="640" y="420" width="60" height="100" fill="#7A4048" fill-opacity="0.28" stroke="#C4A574" stroke-opacity="0.35" stroke-width="1.5"/>
+    <text x="190" y="548" text-anchor="middle" fill="#C4A574" fill-opacity="0.3" font-family="monospace" font-size="8">T1</text>
+    <text x="640" y="548" text-anchor="middle" fill="#C4A574" fill-opacity="0.45" font-family="monospace" font-size="8">T5</text>
+  </g>
+  <text x="400" y="660" text-anchor="middle" fill="#FAF6EF" font-family="Georgia, serif" font-size="52" font-weight="600" letter-spacing="-1" >The Latency</text>
+  <text x="400" y="728" text-anchor="middle" fill="#FAF6EF" font-family="Georgia, serif" font-size="52" font-weight="600" letter-spacing="-0.5" font-style="italic">Tax</text>
+  <line x1="320" y1="762" x2="480" y2="762" stroke="url(#gold04)" stroke-width="2"/>
+  <text x="400" y="800" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.88" font-family="Georgia, serif" font-size="22">The AI Latency Tax:</text>
+  <text x="400" y="834" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.88" font-family="Georgia, serif" font-size="22">Hidden Costs and Temporal Inequality</text>
+  <text x="400" y="910" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.5" font-family="Georgia, serif" font-size="15" font-style="italic">
+    <tspan x="400" dy="0">Latency is invisible until</tspan>
+    <tspan x="400" dy="24">it becomes uneven.</tspan>
+  </text>
+  <rect x="280" y="1000" width="240" height="28" rx="1" fill="none" stroke="#7A4048" stroke-width="1.5"/>
+  <text x="400" y="1020" text-anchor="middle" fill="#7A4048" fill-opacity="0.95" font-family="monospace" font-size="10" letter-spacing="3">AI & SOCIETY</text>
+  <rect x="64" y="1100" width="672" height="1" fill="#F0E6D4" fill-opacity="0.12"/>
+  <rect x="64" y="1104" width="672" height="2" fill="url(#gold04)" fill-opacity="0.6"/>
+  <text x="400" y="1142" text-anchor="middle" fill="#C4A574" fill-opacity="0.7" font-family="monospace" font-size="11" letter-spacing="4">NLUCLOUD PRESS</text>
+  <text x="400" y="1168" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.35" font-family="Georgia, serif" font-size="11" font-style="italic">nlucloud.com</text>
+</svg>

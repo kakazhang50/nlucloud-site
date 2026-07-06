@@ -1,7 +1,7 @@
 ---
 title: "AI as an Orchestration Layer in Education"
 description: "AI’s most important role in education may not be content delivery or teacher replacement, but the coordination of learning models into adaptive, human-centered learning architectures."
-pubDate: 2026-07-03
+pubDate: 2026-01-03
 category: ai-education
 sourcePaper: learning-model-orchestration
 sourceSection: "§4–6"

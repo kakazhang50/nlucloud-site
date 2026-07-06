@@ -6,6 +6,7 @@ import ColumnMark from '@/components/ColumnMark.astro';
 import type { EssayCategory } from '@/content/config';
 import { getCategoryMeta } from '@/data/categories';
 import { siteIssues, issuePath } from '@/data/issues';
+import { issueCoverPath } from '@/lib/covers';
 import { getResearchPaper } from '@/lib/content';
 import { getLexiconTitles } from '@/lib/lexicon';
 import { resolveIssuePage } from '@/lib/issues';
@@ -21,7 +22,7 @@ const { issue, essay } = await resolveIssuePage(issueNum);
 const cat = getCategoryMeta(issue.category as EssayCategory);
 const paper = issue.sourcePaper ? await getResearchPaper(issue.sourcePaper) : undefined;
 const lexiconTitles = await getLexiconTitles(issue.lexiconSlugs);
-const coverImage = issue.number === 1 ? '/covers/issue-01-cover.png' : undefined;
+const coverImage = issueCoverPath(issue.number);
 ---
 
 <BaseLayout
@@ -47,16 +48,17 @@ const coverImage = issue.number === 1 ? '/covers/issue-01-cover.png' : undefined
 
   <div class="page-shell pb-8 pt-6 sm:pb-10 sm:pt-8">
     <div class="page-main space-y-8">
-      {coverImage && (
-        <div class="issue-cover-hero">
-          <IssueCover issue={issue} image={coverImage} priority />
+      <div class="issue-page-header">
+        <IssueCover issue={issue} priority variant="hero" />
+        <div class="issue-page-intro">
+          <h1 class="font-display text-2xl font-semibold text-ink sm:text-3xl">{issue.title}</h1>
+          <p class="mt-3 font-serif text-base italic leading-relaxed text-ink-muted">{issue.theme}</p>
+          <aside class="editor-lede mt-5" aria-label="Editor's note for this issue">
+            <p class="editor-lede-kicker">In this issue</p>
+            <p class="editor-lede-text">{issue.editorLede}</p>
+          </aside>
         </div>
-      )}
-
-      <aside class="editor-lede" aria-label="Editor's note for this issue">
-        <p class="editor-lede-kicker">In this issue</p>
-        <p class="editor-lede-text">{issue.editorLede}</p>
-      </aside>
+      </div>
 
       {essay ? (
         <CoverStory essay={essay} issue={issue} />
@@ -117,3 +119,20 @@ const coverImage = issue.number === 1 ? '/covers/issue-01-cover.png' : undefined
     </div>
   </div>
 </BaseLayout>
+
+<style>
+  .issue-page-header {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #d8d0c4;
+  }
+
+  @media (min-width: 768px) {
+    .issue-page-header {
+      grid-template-columns: minmax(11rem, 14rem) 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

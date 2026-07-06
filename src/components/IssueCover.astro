@@ -1,43 +1,40 @@
 ---
 import type { MagazineIssue } from '@/data/issues';
+import { issueCoverPath } from '@/lib/covers';
 
 interface Props {
   issue: MagazineIssue;
-  /** Optional raster fallback (e.g. /covers/issue-01-cover.png) */
+  /** Override cover path */
   image?: string;
   class?: string;
   priority?: boolean;
+  variant?: 'hero' | 'default';
 }
 
-const { issue, image, class: className, priority = false } = Astro.props;
+const { issue, image, class: className, priority = false, variant = 'default' } = Astro.props;
 
-const coverSrc =
-  image ?? (issue.number === 1 ? '/covers/issue-01-cover.svg' : undefined);
+const coverSrc = image ?? issueCoverPath(issue.number);
 const coverAlt = `${issue.label}: ${issue.title} — ${issue.coverEssayTitle}`;
 ---
 
-{
-  coverSrc ? (
-    <figure class:list={['issue-cover', className]}>
-      <a href={`/issues/${String(issue.number).padStart(2, '0')}/`} class="issue-cover-link">
-        <img
-          src={coverSrc}
-          alt={coverAlt}
-          width="800"
-          height="1200"
-          class="issue-cover-img"
-          loading={priority ? 'eager' : 'lazy'}
-          decoding="async"
-        />
-      </a>
-      <figcaption class="issue-cover-caption">
-        <span class="folio">{issue.label}</span>
-        <span class="ornament mx-2" aria-hidden="true">·</span>
-        <span>{issue.monthYear}</span>
-      </figcaption>
-    </figure>
-  ) : null
-}
+<figure class:list={['issue-cover', variant === 'hero' && 'issue-cover-hero-variant', className]}>
+  <a href={`/issues/${String(issue.number).padStart(2, '0')}/`} class="issue-cover-link">
+    <img
+      src={coverSrc}
+      alt={coverAlt}
+      width="800"
+      height="1200"
+      class="issue-cover-img"
+      loading={priority ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+  </a>
+  <figcaption class="issue-cover-caption">
+    <span class="folio">{issue.label}</span>
+    <span class="ornament mx-2" aria-hidden="true">·</span>
+    <span>{issue.monthYear}</span>
+  </figcaption>
+</figure>
 
 <style>
   .issue-cover {
@@ -50,6 +47,19 @@ const coverAlt = `${issue.label}: ${issue.title} — ${issue.coverEssayTitle}`;
     margin-inline: auto;
     max-width: 22rem;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .issue-cover-hero-variant .issue-cover-link {
+    max-width: 100%;
+    margin-inline: 0;
+  }
+
+  .issue-cover-hero-variant {
+    text-align: left;
+  }
+
+  .issue-cover-hero-variant .issue-cover-caption {
+    text-align: left;
   }
 
   .issue-cover-link:hover {
@@ -75,12 +85,6 @@ const coverAlt = `${issue.label}: ${issue.title} — ${issue.coverEssayTitle}`;
     margin-top: 0.75rem;
     font-size: 0.6875rem;
     color: #8a847c;
-  }
-
-  :global(.issue-cover-hero) {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 0.25rem;
   }
 
   @media (min-width: 640px) {

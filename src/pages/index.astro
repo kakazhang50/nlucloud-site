@@ -1,53 +1,36 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import IssueBand from '@/components/IssueBand.astro';
-import EditorLede from '@/components/EditorLede.astro';
-import IssueCover from '@/components/IssueCover.astro';
-import CoverStory from '@/components/CoverStory.astro';
+import MagazineHero from '@/components/MagazineHero.astro';
+import IssueCard from '@/components/IssueCard.astro';
 import { site } from '@/lib/site';
-import { siteIssues, issuePath } from '@/data/issues';
-import { getCurrentCoverEssay } from '@/lib/issues';
+import { siteIssues } from '@/data/issues';
+import { getCurrentCoverEssay, getCoverEssayForIssue } from '@/lib/issues';
 import { getPublishedFrameworks } from '@/lib/content';
 
 const { issue, essay } = await getCurrentCoverEssay();
+const shelf = await Promise.all(
+  siteIssues.map(async (i) => ({
+    issue: i,
+    essay: await getCoverEssayForIssue(i),
+  })),
+);
 const lexicon = (await getPublishedFrameworks()).slice(0, 4);
-const forthcoming = siteIssues.filter((i) => i.status === 'planned').slice(0, 3);
 ---
 
 <BaseLayout description={site.description}>
-  <IssueBand />
+  <div class="page-shell pb-8 pt-5 sm:pb-10 sm:pt-6">
+    <div class="page-main space-y-10">
+      <MagazineHero issue={issue} essay={essay} />
 
-  <div class="page-shell pb-6 pt-5 sm:pb-8 sm:pt-6">
-    <div class="page-main space-y-8">
-      <div class="issue-cover-hero">
-        <IssueCover issue={issue} image="/covers/issue-01-cover.png" priority />
-      </div>
-
-      <EditorLede />
-
-      {essay && <CoverStory essay={essay} issue={issue} />}
-
-      <p class="text-center">
-        <a href={issuePath(issue.number)} class="link-editorial text-sm">
-          Read {issue.label} →
-        </a>
-      </p>
-
-      <section>
+      <section class="issue-shelf-section" aria-label="All issues">
         <div class="section-kicker">
-          <h2 class="folio">Forthcoming issues</h2>
-          <a href="/issues/" class="link-editorial text-xs">All issues</a>
+          <h2 class="folio">All Issues</h2>
+          <a href="/issues/" class="link-editorial text-xs">Issue archive</a>
         </div>
-        <div class="mt-4 divide-y divide-line">
+        <div class="issue-shelf-grid">
           {
-            forthcoming.map((i) => (
-              <article class="feed-item py-3">
-                <p class="folio">{i.label} · {i.monthYear}</p>
-                <h3 class="feed-title mt-1">
-                  <a href={issuePath(i.number)}>{i.title}</a>
-                </h3>
-                <p class="mt-1 text-sm text-ink-muted">{i.coverEssayTitle}</p>
-              </article>
+            shelf.map(({ issue: i, essay: e }) => (
+              <IssueCard issue={i} essay={e} current={i.number === issue.number} />
             ))
           }
         </div>
@@ -90,3 +73,19 @@ const forthcoming = siteIssues.filter((i) => i.status === 'planned').slice(0, 3)
     </div>
   </div>
 </BaseLayout>
+
+<style>
+  .issue-shelf-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 1.25rem;
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .issue-shelf-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem 1.5rem;
+    }
+  }
+</style>

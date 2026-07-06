@@ -1,7 +1,7 @@
 ---
 title: "Judgment-as-Product: Why Value Completes at Human Authorization"
 description: "Under generative abundance, value no longer completes at the moment of output. It completes when a human actor selects, validates, adopts, and stands behind a specific choice."
-pubDate: 2026-08-01
+pubDate: 2026-02-01
 category: ai-cognition
 sourcePaper: judgment-as-product
 sourceSection: "§1–8"

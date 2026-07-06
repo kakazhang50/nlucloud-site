@@ -27,7 +27,7 @@ export const coreIssues: MagazineIssue[] = [
     number: 1,
     label: 'Issue 01',
     title: 'Learning Architecture',
-    monthYear: 'July 2026',
+    monthYear: 'January 2026',
     theme: 'When information is abundant, learning model orchestration becomes the binding constraint.',
     editorLede:
       'AI’s deeper role in education may not be content delivery or teacher replacement. It may be orchestration: selecting, sequencing, and combining learning models under limited cognitive energy.',
@@ -43,7 +43,7 @@ export const coreIssues: MagazineIssue[] = [
     number: 2,
     label: 'Issue 02',
     title: 'Judgment Completes Value',
-    monthYear: 'August 2026',
+    monthYear: 'February 2026',
     theme: 'Under generative abundance, value completes at accountable human authorization.',
     editorLede:
       'AI can generate ten drafts in a minute. It cannot decide which draft should represent you, your organization, or your work. That act — judgment — is where value becomes product.',
@@ -59,7 +59,7 @@ export const coreIssues: MagazineIssue[] = [
     number: 3,
     label: 'Issue 03',
     title: 'The Waiting Tax',
-    monthYear: 'September 2026',
+    monthYear: 'March 2026',
     theme: 'Waiting for AI is not free time — it is suspended attention with cognitive cost.',
     editorLede:
       'Artificial intelligence is sold as speed. Yet daily use brings spinners, blank pauses, and suspended attention. Before policy asks who waits longer, we must name what waiting does to the human on the other side.',
@@ -75,7 +75,7 @@ export const coreIssues: MagazineIssue[] = [
     number: 4,
     label: 'Issue 04',
     title: 'The Latency Tax',
-    monthYear: 'October 2026',
+    monthYear: 'April 2026',
     theme: 'Latency is a structural externality — uneven, cumulative, and hard to see.',
     editorLede:
       'The AI Waiting Tax names lived experience. The AI Latency Tax extends this into structure: who waits longer, whose time is commodified, and whether essential services should tier responsiveness.',
@@ -91,7 +91,7 @@ export const coreIssues: MagazineIssue[] = [
     number: 5,
     label: 'Issue 05',
     title: 'Before the Model Responds',
-    monthYear: 'November 2026',
+    monthYear: 'May 2026',
     theme: 'Misalignment often begins before the model answers — in how we represent what we want.',
     editorLede:
       'When AI outputs feel generic or misaligned, the problem is often traced to the model. But much failure is co-produced at the cognition–language interface — in expression distortion and self-alignment load.',
@@ -107,7 +107,7 @@ export const coreIssues: MagazineIssue[] = [
     number: 6,
     label: 'Issue 06',
     title: 'Reweighted Motives',
-    monthYear: 'December 2026',
+    monthYear: 'June 2026',
     theme: 'AI does not replace creative motives. It reweights what each motive costs to act on.',
     editorLede:
       'Generative AI is often framed as a threat to creativity. A better frame: three long-standing motives — expression, feedback, and outcome — coexist, and AI changes their activation costs and institutional rewards.',
