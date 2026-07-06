@@ -6,7 +6,7 @@ category: ai-life
 sourcePaper: ai-waiting-tax
 sourceSection: "§1–8"
 status: published
-featured: true
+featured: false
 issueNumber: 3
 issueRole: cover
 frameworks: [ai-waiting-tax, ai-latency-tax]

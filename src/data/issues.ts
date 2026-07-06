@@ -79,7 +79,7 @@ export const coreIssues: MagazineIssue[] = [
     theme: 'Latency is a structural externality — uneven, cumulative, and hard to see.',
     editorLede:
       'The AI Waiting Tax names lived experience. The AI Latency Tax extends this into structure: who waits longer, whose time is commodified, and whether essential services should tier responsiveness.',
-    status: 'planned',
+    status: 'published',
     sourcePaper: 'ai-latency-tax',
     ssrnId: '6535458',
     coverEssaySlug: 'latency-tax-flagship',
