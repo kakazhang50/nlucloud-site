@@ -3,6 +3,7 @@ title: "Judgment-as-Product"
 abbreviation: "JAP"
 description: "Under generative abundance, value completes through accountable human judgment — not at the moment of AI generation."
 sourcePaper: "judgment-as-product"
+lexiconNumber: 2
 status: published
 ---
 

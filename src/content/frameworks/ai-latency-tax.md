@@ -3,6 +3,7 @@ title: "AI Latency Tax"
 abbreviation: "ALT"
 description: "Latency as a structural, distributive externality in intelligent systems — invisible, cumulative, and unevenly borne."
 sourcePaper: "ai-latency-tax"
+lexiconNumber: 6
 status: published
 ---
 

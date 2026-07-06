@@ -3,76 +3,85 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import IssueBand from '@/components/IssueBand.astro';
 import EditorLede from '@/components/EditorLede.astro';
 import CoverStory from '@/components/CoverStory.astro';
-import EssayFeedItem from '@/components/EssayFeedItem.astro';
-import SectionNav from '@/components/SectionNav.astro';
 import { site } from '@/lib/site';
-import { getPublishedEssays, getPublishedEditorNotes } from '@/lib/content';
-import { formatDate } from '@/lib/site';
+import { allIssues, issuePath } from '@/data/issues';
+import { getCurrentCoverEssay } from '@/lib/issues';
+import { getPublishedFrameworks } from '@/lib/content';
 
-const [essays, notes] = await Promise.all([
-  getPublishedEssays(),
-  getPublishedEditorNotes(),
-]);
-
-const [lead, ...rest] = essays;
+const { issue, essay } = await getCurrentCoverEssay();
+const lexicon = (await getPublishedFrameworks()).slice(0, 4);
+const forthcoming = allIssues.filter((i) => i.status === 'planned').slice(0, 3);
 ---
 
 <BaseLayout description={site.description}>
   <IssueBand />
 
   <div class="page-shell pb-6 pt-5 sm:pb-8 sm:pt-6">
-    <div class="page-main space-y-6">
+    <div class="page-main space-y-8">
       <EditorLede />
 
-      {lead && <CoverStory essay={lead} />}
+      {essay && <CoverStory essay={essay} issue={issue} />}
 
-      {
-        (rest.length > 0 || essays.length > 0) && (
-          <section>
-            <div class="section-kicker">
-              <h2 class="folio">Also in this issue</h2>
-              <a href="/essays/" class="link-editorial text-xs">All essays</a>
-            </div>
-            <SectionNav variant="compact" showAll={false} />
-            {
-              rest.length > 0 ? (
-                <div class="mt-4">
-                  {rest.map((essay) => (
-                    <EssayFeedItem essay={essay} />
-                  ))}
-                </div>
-              ) : (
-                <p class="mt-4 text-sm text-ink-muted">
-                  More essays from the
-                  <a href="/research/" class="link-editorial"> research archive</a> are forthcoming.
-                </p>
-              )
-            }
-          </section>
-        )
-      }
+      <p class="text-center">
+        <a href={issuePath(issue.number)} class="link-editorial text-sm">
+          Read {issue.label} →
+        </a>
+      </p>
 
-      {
-        notes.length > 0 && (
-          <section class="section-block">
-            <div class="section-kicker">
-              <h2 class="folio">Editor's Notes</h2>
-              <a href="/editors-notes/" class="link-editorial text-xs">All notes</a>
-            </div>
-            {
-              notes.slice(0, 2).map((note) => (
-                <article class="feed-item">
-                  <h3 class="feed-title">
-                    <a href={`/editors-notes/${note.slug}/`}>{note.data.title}</a>
+      <section>
+        <div class="section-kicker">
+          <h2 class="folio">Forthcoming issues</h2>
+          <a href="/issues/" class="link-editorial text-xs">All issues</a>
+        </div>
+        <div class="mt-4 divide-y divide-line">
+          {
+            forthcoming.map((i) => (
+              <article class="feed-item py-3">
+                <p class="folio">{i.label} · {i.monthYear}</p>
+                <h3 class="feed-title mt-1">
+                  <a href={issuePath(i.number)}>{i.title}</a>
+                </h3>
+                <p class="mt-1 text-sm text-ink-muted">{i.coverEssayTitle}</p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-kicker">
+          <h2 class="folio">Lexicon</h2>
+          <a href="/lexicon/" class="link-editorial text-xs">All entries</a>
+        </div>
+        <div class="mt-4 divide-y divide-line">
+          {
+            lexicon.map((entry) => (
+              <article class="py-3">
+                <a href={`/lexicon/${entry.slug}/`} class="group block">
+                  <span class="font-mono text-[11px] uppercase tracking-wide text-accent-rust">
+                    {entry.data.abbreviation}
+                  </span>
+                  <h3 class="mt-0.5 font-serif text-base font-semibold text-ink group-hover:text-forest">
+                    {entry.data.title}
                   </h3>
-                  <p class="mt-1.5 text-sm text-ink-muted">{note.data.description}</p>
-                  <p class="feed-meta">{formatDate(note.data.pubDate)}</p>
-                </article>
-              ))
-            }
-          </section>
-        )
-      }
+                </a>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section-block border-t border-line pt-6">
+        <p class="folio">NLUCloud Press</p>
+        <p class="mt-2 text-sm text-ink-muted">
+          <a href="/annual-review/" class="link-editorial">
+            AI &amp; Society Annual Review 2026
+          </a>
+          {' '}— forthcoming late 2026.
+          <a href="/press/" class="link-editorial ml-2">Press</a>
+          <a href="/masthead/" class="link-editorial ml-2">Masthead</a>
+        </p>
+      </section>
     </div>
   </div>
 </BaseLayout>

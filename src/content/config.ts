@@ -22,6 +22,8 @@ const essays = defineCollection({
     sourceSection: z.string().optional(),
     status: contentStatus.default('planned'),
     featured: z.boolean().default(false),
+    issueNumber: z.number().int().min(1).optional(),
+    issueRole: z.enum(['cover', 'companion']).optional(),
     series: z.string().nullable().optional(),
     frameworks: z.array(z.string()).optional(),
   }),
@@ -33,7 +35,8 @@ const frameworks = defineCollection({
     title: z.string(),
     abbreviation: z.string(),
     description: z.string(),
-    sourcePaper: z.string(),
+    sourcePaper: z.string().optional(),
+    lexiconNumber: z.number().int().optional(),
     status: contentStatus.default('planned'),
   }),
 });

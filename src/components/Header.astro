@@ -3,10 +3,11 @@ import { site } from '@/lib/site';
 
 const nav = [
   { href: '/', label: 'Home' },
-  { href: '/essays/', label: 'Essays' },
-  { href: '/frameworks/', label: 'Frameworks' },
+  { href: '/issues/', label: 'Issues' },
+  { href: '/lexicon/', label: 'Lexicon' },
   { href: '/research/', label: 'Research' },
-  { href: '/editors-notes/', label: 'Notes' },
+  { href: '/archive/', label: 'Archive' },
+  { href: '/masthead/', label: 'Masthead' },
   { href: '/about/', label: 'About' },
 ];
 
@@ -29,7 +30,7 @@ const isHome = current === '/' || current === '';
           isHome ? 'py-4 sm:py-5' : 'py-2 sm:py-2.5',
         ]}
       >
-        {isHome && <p class="folio">Independent Research · Editorial Essays</p>}
+        {isHome && <p class="folio">NLUCloud AI &amp; Society Review</p>}
         <a
           href="/"
           class:list={[

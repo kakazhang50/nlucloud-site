@@ -1,9 +1,9 @@
 {
   "siteName": "NLU Cloud",
   "domain": "nlucloud.com",
-  "tagline": "Natural Language Understanding for Humans",
-  "subtitle": "Independent essays on AI, language, cognition, society, education, humanities, and everyday life.",
-  "description": "NLU Cloud is an independent editorial site exploring how artificial intelligence understands language, how that changes human cognition, and what it means for education, society, and everyday life. Essays are drawn from published research on SSRN.",
+  "tagline": "NLUCloud AI & Society Review",
+  "subtitle": "An independent AI research and review magazine — one cover essay per issue, drawn from published SSRN research.",
+  "description": "NLUCloud AI & Society Review is an independent digital magazine on the long-term impact of artificial intelligence on education, knowledge production, cognition, and social organization. Each issue features one cover essay translated from published research.",
   "author": "Liang Zhang",
   "authorEmail": "zl10161983@gmail.com",
   "orcid": "0009-0002-0124-1706",

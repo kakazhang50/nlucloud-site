@@ -17,12 +17,17 @@ const paper = fw.data.sourcePaper ? await getResearchPaper(fw.data.sourcePaper) 
   title={fw.data.title}
   description={fw.data.description}
   breadcrumbs={[
-    { name: 'Frameworks', path: '/frameworks/' },
-    { name: fw.data.abbreviation, path: `/frameworks/${fw.slug}/` },
+    { name: 'Lexicon', path: '/lexicon/' },
+    { name: fw.data.abbreviation, path: `/lexicon/${fw.slug}/` },
   ]}
 >
   <article class="py-8 sm:py-10">
     <header class="article-header px-5">
+      {fw.data.lexiconNumber && (
+        <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-ink-faint">
+          Lexicon Entry {String(fw.data.lexiconNumber).padStart(3, '0')}
+        </p>
+      )}
       <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-accent-rust">{fw.data.abbreviation}</p>
       <h1 class="hero-title mt-2">{fw.data.title}</h1>
       <p class="deck mx-auto mt-4 max-w-prose">{fw.data.description}</p>

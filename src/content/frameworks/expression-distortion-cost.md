@@ -3,6 +3,7 @@ title: "Expression Distortion Cost"
 abbreviation: "EDC"
 description: "Performance loss when expressed input to AI diverges from the user's underlying goals, constraints, and preferences."
 sourcePaper: "self-distortion"
+lexiconNumber: 7
 status: published
 ---
 

@@ -1,0 +1,57 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { allIssues } from '@/data/issues';
+import { getPublishedIssues } from '@/data/issues';
+---
+
+<BaseLayout
+  title="NLUCloud Press"
+  description="Publications from NLUCloud AI & Society Review — essays, working papers, and annual reviews."
+  breadcrumbs={[{ name: 'Press', path: '/press/' }]}
+>
+  <div class="page-shell py-8 sm:py-10">
+    <div class="page-main">
+      <p class="folio mb-2">NLUCloud Press</p>
+      <p class="mb-8 max-w-prose text-sm leading-relaxed text-ink-muted">
+        Formal publication imprint for NLUCloud AI &amp; Society Review.
+      </p>
+
+      <section class="mb-10">
+        <h2 class="font-display text-lg font-semibold text-ink">Cover essay series</h2>
+        <ul class="mt-4 space-y-2 text-sm">
+          {
+            getPublishedIssues().map((issue) => (
+              <li>
+                <span class="folio">{issue.label}</span>
+                {' — '}
+                <a href={`/issues/${String(issue.number).padStart(2, '0')}/`} class="link-editorial">
+                  {issue.coverEssayTitle}
+                </a>
+              </li>
+            ))
+          }
+          <li class="text-ink-muted">
+            + {allIssues.filter((i) => i.status === 'planned').length} forthcoming issues
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="font-display text-lg font-semibold text-ink">Working papers</h2>
+        <p class="mt-2 text-sm text-ink-muted">
+          Six SSRN working papers indexed at <a href="/research/">Research</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-display text-lg font-semibold text-ink">Annual publications</h2>
+        <p class="mt-2 text-sm">
+          <a href="/annual-review/" class="link-editorial">
+            NLUCloud AI &amp; Society Annual Review 2026
+          </a>
+          <span class="text-ink-faint"> — forthcoming</span>
+        </p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

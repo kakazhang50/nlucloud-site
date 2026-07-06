@@ -6,7 +6,7 @@ category: ai-cognition
 sourcePaper: judgment-as-product
 sourceSection: "§1"
 status: published
-featured: true
+featured: false
 frameworks: [judgment-as-product]
 ---
 

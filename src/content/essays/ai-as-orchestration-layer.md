@@ -7,6 +7,8 @@ sourcePaper: learning-model-orchestration
 sourceSection: "§4–6"
 status: published
 featured: true
+issueNumber: 1
+issueRole: cover
 frameworks: [learning-model-orchestration]
 ---
 

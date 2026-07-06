@@ -3,6 +3,7 @@ title: "AI Waiting Tax"
 abbreviation: "AWT"
 description: "The hidden psychological and cognitive cost of waiting for AI responses — idle time as suspended attention, not free time."
 sourcePaper: "ai-waiting-tax"
+lexiconNumber: 5
 status: published
 ---
 

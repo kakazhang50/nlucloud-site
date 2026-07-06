@@ -1,0 +1,54 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site } from '@/lib/site';
+---
+
+<BaseLayout
+  title="Masthead"
+  description="Publication information for NLUCloud AI & Society Review."
+  breadcrumbs={[{ name: 'Masthead', path: '/masthead/' }]}
+>
+  <div class="page-shell py-8 sm:py-10">
+    <div class="page-main">
+      <p class="folio mb-4">Masthead</p>
+      <div class="prose-nlu">
+        <h2>Publication</h2>
+        <p><strong>NLUCloud AI &amp; Society Review</strong></p>
+        <p>
+          An independent digital research and review magazine focused on the long-term impact of
+          artificial intelligence on education, knowledge production, cognition, and social
+          organization.
+        </p>
+
+        <h2>Editor-in-Chief</h2>
+        <p>
+          <strong>{site.author}</strong><br />
+          <a href={site.orcidUrl}>ORCID</a> · <a href={site.ssrnAuthorUrl}>SSRN</a>
+        </p>
+
+        <h2>Publisher</h2>
+        <p><strong>NLUCloud Press</strong></p>
+
+        <h2>Format</h2>
+        <p>
+          One cover essay per issue (2,500–4,500 words), translated from published SSRN working
+          papers and related research. Issues archive by year. A <a href="/lexicon/">Lexicon</a> of
+          named frameworks accompanies the essay series.
+        </p>
+
+        <h2>Independence</h2>
+        <p>
+          NLUCloud AI &amp; Society Review is an independent publication. It is not affiliated with
+          a university, government body, or peer-reviewed journal. Working papers on{' '}
+          <a href="/research/">SSRN</a> are authoritative research sources; cover essays are
+          editorial translations for a general readership.
+        </p>
+
+        <h2>Site</h2>
+        <p>
+          <a href="https://nlucloud.com/">nlucloud.com</a> — published by {site.siteName}.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

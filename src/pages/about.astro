@@ -8,19 +8,34 @@ import { site } from '@/lib/site';
     <div class="page-main">
       <p class="folio mb-4">About</p>
       <div class="prose-nlu">
-      <p>{site.description}</p>
-      <h2>Author</h2>
-      <p>
-        <strong>{site.author}</strong> — Independent Researcher<br />
-        <a href={`mailto:${site.authorEmail}`}>{site.authorEmail}</a><br />
-        <a href={site.orcidUrl}>ORCID</a> · <a href={site.ssrnAuthorUrl}>SSRN</a>
-      </p>
-      <h2>How this site works</h2>
-      <p>
-        NLU Cloud publishes essays translated from formal research. One paper can yield many essays
-        across different columns. Papers on <a href="/research/">SSRN</a> are authoritative; essays
-        are public translations. <a href="/editorial-policy/">Editorial policy</a>.
-      </p>
+        <p>{site.description}</p>
+
+        <h2>Format</h2>
+        <p>
+          <strong>NLUCloud AI &amp; Society Review</strong> publishes one cover essay per issue (English,
+          2,500–4,500 words). Each issue translates a section of published SSRN research into a
+          standalone magazine essay. See the <a href="/issues/">issue archive</a> and{' '}
+          <a href="/masthead/">masthead</a>.
+        </p>
+
+        <h2>Editor-in-Chief</h2>
+        <p>
+          <strong>{site.author}</strong><br />
+          <a href={`mailto:${site.authorEmail}`}>{site.authorEmail}</a><br />
+          <a href={site.orcidUrl}>ORCID</a> · <a href={site.ssrnAuthorUrl}>SSRN</a>
+        </p>
+
+        <h2>Research &amp; Lexicon</h2>
+        <p>
+          <a href="/research/">SSRN working papers</a> are authoritative sources. Cover essays are
+          editorial translations. The <a href="/lexicon/">Lexicon</a> defines named frameworks from
+          this research program.
+        </p>
+
+        <p>
+          <a href="/editorial-policy/">Editorial policy</a> · <a href="/press/">NLUCloud Press</a> ·{' '}
+          <a href="/annual-review/">Annual Review 2026</a>
+        </p>
       </div>
     </div>
   </div>

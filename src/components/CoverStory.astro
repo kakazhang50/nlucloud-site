@@ -2,21 +2,22 @@
 import ColumnMark from '@/components/ColumnMark.astro';
 import AuthorByline from '@/components/AuthorByline.astro';
 import { getCategoryMeta } from '@/data/categories';
-import { currentIssue } from '@/data/magazine';
+import type { MagazineIssue } from '@/data/issues';
 import type { EssayEntry } from '@/lib/content';
 
 interface Props {
   essay: EssayEntry;
+  issue: MagazineIssue;
 }
 
-const { essay } = Astro.props;
+const { essay, issue } = Astro.props;
 const cat = getCategoryMeta(essay.data.category);
 ---
 
 <article class="cover-story">
   <div class:list={['cover-story-inner', `cover-story-accent-${cat.accent}`]}>
     <p class="cover-story-folio">
-      {currentIssue.label}
+      {issue.label}
       <span class="ornament mx-2" aria-hidden="true">—</span>
       Cover Essay
     </p>

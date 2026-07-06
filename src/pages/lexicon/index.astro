@@ -1,0 +1,45 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getPublishedFrameworks } from '@/lib/content';
+
+const entries = await getPublishedFrameworks();
+entries.sort((a, b) => (a.data.lexiconNumber ?? 99) - (b.data.lexiconNumber ?? 99));
+---
+
+<BaseLayout
+  title="Lexicon"
+  description="Named concepts from NLUCloud research — definitions for essays and SSRN working papers."
+  breadcrumbs={[{ name: 'Lexicon', path: '/lexicon/' }]}
+>
+  <div class="page-shell py-4 sm:py-5">
+    <div class="page-main">
+      <p class="folio pb-1">Lexicon</p>
+      <p class="mb-6 max-w-prose text-sm leading-relaxed text-ink-muted">
+        Short, precise entries for frameworks introduced in SSRN working papers and cover essays.
+        Each entry defines a concept you can cite in essays, talks, and the Annual Review.
+      </p>
+      <div class="divide-y divide-line border-t border-line">
+        {
+          entries.map((fw) => (
+            <article class="py-4">
+              <a href={`/lexicon/${fw.slug}/`} class="group block">
+                {fw.data.lexiconNumber && (
+                  <span class="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-faint">
+                    Entry {String(fw.data.lexiconNumber).padStart(3, '0')}
+                  </span>
+                )}
+                <span class="font-mono text-[11px] uppercase tracking-[0.14em] text-accent-rust">
+                  {fw.data.abbreviation}
+                </span>
+                <h2 class="mt-1 font-serif text-lg font-semibold text-ink group-hover:text-forest">
+                  {fw.data.title}
+                </h2>
+                <p class="mt-1 text-sm leading-relaxed text-ink-muted">{fw.data.description}</p>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</BaseLayout>

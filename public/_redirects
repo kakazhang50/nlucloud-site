@@ -1,1 +1,4 @@
 https://www.nlucloud.com/* https://nlucloud.com/:splat 301
+
+/frameworks/* /lexicon/:splat 301
+/frameworks/ /lexicon/ 301

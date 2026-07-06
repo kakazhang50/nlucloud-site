@@ -5,7 +5,7 @@ import ColumnMark from '@/components/ColumnMark.astro';
 import AuthorByline from '@/components/AuthorByline.astro';
 import { getCategoryMeta } from '@/data/categories';
 import { getResearchPaper } from '@/lib/content';
-import { essaySourceAttribution } from '@/lib/editorial';
+import { issuePath } from '@/data/issues';
 
 export async function getStaticPaths() {
   const essays = await getCollection('essays', ({ data }) => data.status === 'published');
@@ -38,6 +38,18 @@ const paper = await getResearchPaper(essay.data.sourcePaper);
   <article class="py-8 sm:py-10">
     <header class="article-header px-5">
       <ColumnMark accent={cat.accent} label={cat.label} class="centered" />
+      {
+        essay.data.issueNumber && essay.data.issueRole === 'cover' && (
+          <p class="mt-3 text-center">
+            <a
+              href={issuePath(essay.data.issueNumber)}
+              class="folio text-ink-muted hover:text-forest"
+            >
+              Issue {String(essay.data.issueNumber).padStart(2, '0')} · Cover Essay
+            </a>
+          </p>
+        )
+      }
       <h1 class="hero-title mt-4">{essay.data.title}</h1>
       <p class="deck mx-auto mt-4 max-w-prose">{essay.data.description}</p>
       <div class="mt-5 flex justify-center">

@@ -1,0 +1,82 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { allIssues, issuePath } from '@/data/issues';
+import { getCoverEssayForIssue } from '@/lib/issues';
+
+const byYear = new Map<number, typeof allIssues>();
+for (const issue of allIssues) {
+  const year = parseInt(issue.monthYear.split(' ')[1] ?? '2026', 10);
+  const list = byYear.get(year) ?? [];
+  list.push(issue);
+  byYear.set(year, list);
+}
+const years = [...byYear.keys()].sort((a, b) => b - a);
+
+const issueRows = await Promise.all(
+  allIssues.map(async (issue) => ({
+    issue,
+    essay: await getCoverEssayForIssue(issue),
+  })),
+);
+---
+
+<BaseLayout
+  title="Archive"
+  description="Complete issue archive — NLUCloud AI & Society Review."
+  breadcrumbs={[{ name: 'Archive', path: '/archive/' }]}
+>
+  <div class="page-shell py-8 sm:py-10">
+    <div class="page-main">
+      <p class="folio mb-2">Archive</p>
+      <p class="mb-8 max-w-prose text-sm leading-relaxed text-ink-muted">
+        One cover essay per issue. Issues are published in English on a monthly cadence.
+      </p>
+
+      {
+        years.map((year) => (
+          <section class="mb-10">
+            <h2 class="font-display text-xl font-semibold text-ink">{year}</h2>
+            <div class="mt-4 divide-y divide-line border-t border-line">
+              {issueRows
+                .filter(({ issue }) => issue.monthYear.includes(String(year)))
+                .map(({ issue, essay }) => (
+                  <article class="py-4">
+                    <div class="flex flex-wrap items-baseline justify-between gap-2">
+                      <p class="folio">{issue.label}</p>
+                      <p class="text-xs text-ink-faint">{issue.monthYear}</p>
+                    </div>
+                    <h3 class="mt-1 font-serif text-lg font-semibold text-ink">
+                      {essay ? (
+                        <a href={`/essays/${essay.slug}/`} class="hover:text-forest">
+                          {issue.coverEssayTitle}
+                        </a>
+                      ) : (
+                        <a href={issuePath(issue.number)} class="text-ink-muted hover:text-forest">
+                          {issue.coverEssayTitle}
+                        </a>
+                      )}
+                    </h3>
+                    <p class="mt-1 text-sm text-ink-muted">{issue.theme}</p>
+                    <p class="mt-2">
+                      <span
+                        class:list={[
+                          'text-xs font-medium uppercase tracking-wide',
+                          issue.status === 'published' ? 'text-forest' : 'text-ink-faint',
+                        ]}
+                      >
+                        {issue.status === 'published' ? 'Published' : 'Forthcoming'}
+                      </span>
+                      <span class="mx-2 text-ink-faint" aria-hidden="true">·</span>
+                      <a href={issuePath(issue.number)} class="link-editorial text-xs">
+                        Issue page
+                      </a>
+                    </p>
+                  </article>
+                ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
