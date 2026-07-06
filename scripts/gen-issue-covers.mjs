@@ -10,6 +10,16 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.resolve(__dirname, '../public/covers');
 
+/** Escape text for safe SVG/XML embedding. */
+function escapeXml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 const COVERS = [
   {
     num: 1,
@@ -170,9 +180,15 @@ function motifSvg(type, accent) {
 
 function buildCover(c) {
   const id = String(c.num).padStart(2, '0');
-  const issueLabel = `ISSUE ${id} · ${c.month}`;
-  const title1 = c.title[0];
-  const title2 = c.title[1];
+  const issueLabel = escapeXml(`ISSUE ${id} · ${c.month}`);
+  const title1 = escapeXml(c.title[0]);
+  const title2 = escapeXml(c.title[1]);
+  const essay0 = escapeXml(c.essay[0]);
+  const essay1 = escapeXml(c.essay[1]);
+  const deck0 = escapeXml(c.deck[0]);
+  const deck1 = escapeXml(c.deck[1]);
+  const category = escapeXml(c.category);
+  const coverTitle = escapeXml(`Issue ${id} — ${c.title.join(' ')}`);
   const t1Style = c.titleItalic[0] ? 'font-style="italic"' : '';
   const t2Style = c.titleItalic[1] ? 'font-style="italic"' : '';
 
@@ -180,7 +196,7 @@ function buildCover(c) {
   const essaySize = c.essay.some((l) => l.length > 38) ? 18 : 22;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" role="img" aria-labelledby="coverTitle${id}">
-  <title id="coverTitle${id}">Issue ${id} — ${c.title.join(' ')}</title>
+  <title id="coverTitle${id}">${coverTitle}</title>
   <defs>
     <linearGradient id="bg${id}" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="${c.bg[0]}"/>
@@ -207,14 +223,14 @@ function buildCover(c) {
   <text x="400" y="660" text-anchor="middle" fill="#FAF6EF" font-family="Georgia, serif" font-size="52" font-weight="600" letter-spacing="-1" ${t1Style}>${title1}</text>
   <text x="400" y="728" text-anchor="middle" fill="#FAF6EF" font-family="Georgia, serif" font-size="52" font-weight="600" letter-spacing="-0.5" ${t2Style}>${title2}</text>
   <line x1="320" y1="762" x2="480" y2="762" stroke="url(#gold${id})" stroke-width="2"/>
-  <text x="400" y="${essayY}" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.88" font-family="Georgia, serif" font-size="${essaySize}">${c.essay[0]}</text>
-  <text x="400" y="${essayY + 34}" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.88" font-family="Georgia, serif" font-size="${essaySize}">${c.essay[1]}</text>
+  <text x="400" y="${essayY}" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.88" font-family="Georgia, serif" font-size="${essaySize}">${essay0}</text>
+  <text x="400" y="${essayY + 34}" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.88" font-family="Georgia, serif" font-size="${essaySize}">${essay1}</text>
   <text x="400" y="910" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.5" font-family="Georgia, serif" font-size="15" font-style="italic">
-    <tspan x="400" dy="0">${c.deck[0]}</tspan>
-    <tspan x="400" dy="24">${c.deck[1]}</tspan>
+    <tspan x="400" dy="0">${deck0}</tspan>
+    <tspan x="400" dy="24">${deck1}</tspan>
   </text>
   <rect x="280" y="1000" width="240" height="28" rx="1" fill="none" stroke="${c.accent}" stroke-width="1.5"/>
-  <text x="400" y="1020" text-anchor="middle" fill="${c.accent}" fill-opacity="0.95" font-family="monospace" font-size="10" letter-spacing="3">${c.category}</text>
+  <text x="400" y="1020" text-anchor="middle" fill="${c.accent}" fill-opacity="0.95" font-family="monospace" font-size="10" letter-spacing="3">${category}</text>
   <rect x="64" y="1100" width="672" height="1" fill="#F0E6D4" fill-opacity="0.12"/>
   <rect x="64" y="1104" width="672" height="2" fill="url(#gold${id})" fill-opacity="0.6"/>
   <text x="400" y="1142" text-anchor="middle" fill="#C4A574" fill-opacity="0.7" font-family="monospace" font-size="11" letter-spacing="4">NLUCLOUD PRESS</text>

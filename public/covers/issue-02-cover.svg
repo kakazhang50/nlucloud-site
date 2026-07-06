@@ -47,7 +47,7 @@
     <tspan x="400" dy="24">authorization completes value.</tspan>
   </text>
   <rect x="280" y="1000" width="240" height="28" rx="1" fill="none" stroke="#1E3A2F" stroke-width="1.5"/>
-  <text x="400" y="1020" text-anchor="middle" fill="#1E3A2F" fill-opacity="0.95" font-family="monospace" font-size="10" letter-spacing="3">AI & COGNITION</text>
+  <text x="400" y="1020" text-anchor="middle" fill="#1E3A2F" fill-opacity="0.95" font-family="monospace" font-size="10" letter-spacing="3">AI &amp; COGNITION</text>
   <rect x="64" y="1100" width="672" height="1" fill="#F0E6D4" fill-opacity="0.12"/>
   <rect x="64" y="1104" width="672" height="2" fill="url(#gold02)" fill-opacity="0.6"/>
   <text x="400" y="1142" text-anchor="middle" fill="#C4A574" fill-opacity="0.7" font-family="monospace" font-size="11" letter-spacing="4">NLUCLOUD PRESS</text>

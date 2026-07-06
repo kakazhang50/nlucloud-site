@@ -304,8 +304,8 @@ export function issuePath(number: number): string {
 }
 
 export function getCurrentIssue(): MagazineIssue {
-  const published = [...siteIssues].reverse().find((i) => i.status === 'published');
-  return published ?? siteIssues[0];
+  /** Latest issue in the active series (highest issue number). */
+  return siteIssues[siteIssues.length - 1] ?? siteIssues[0];
 }
 
 export function getPublishedIssues(): MagazineIssue[] {
