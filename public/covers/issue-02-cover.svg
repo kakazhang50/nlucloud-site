@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" role="img" aria-labelledby="coverTitle02">
-  <title id="coverTitle02">Issue 02 — Judgment Completes Value</title>
+  <title id="coverTitle02">Issue 02 — Before the Model Responds</title>
   <defs>
     <linearGradient id="bg02" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#121F1A"/>
-      <stop offset="55%" stop-color="#1A2E26"/>
-      <stop offset="100%" stop-color="#243830"/>
+      <stop offset="0%" stop-color="#141C24"/>
+      <stop offset="55%" stop-color="#1C2834"/>
+      <stop offset="100%" stop-color="#243440"/>
     </linearGradient>
     <linearGradient id="gold02" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#A8895A"/>
@@ -24,30 +24,24 @@
   <text x="400" y="196" text-anchor="middle" fill="#C4A574" font-family="monospace" font-size="12" letter-spacing="4.2">ISSUE 02 · FEBRUARY 2026</text>
   
   <g opacity="0.85">
-    <circle cx="280" cy="340" r="28" fill="none" stroke="#C4A574" stroke-opacity="0.2" stroke-width="1"/>
-    <circle cx="400" cy="300" r="28" fill="none" stroke="#C4A574" stroke-opacity="0.2" stroke-width="1"/>
-    <circle cx="520" cy="340" r="28" fill="none" stroke="#C4A574" stroke-opacity="0.2" stroke-width="1"/>
-    <circle cx="320" cy="420" r="22" fill="none" stroke="#C4A574" stroke-opacity="0.15" stroke-width="1"/>
-    <circle cx="480" cy="420" r="22" fill="none" stroke="#C4A574" stroke-opacity="0.15" stroke-width="1"/>
-    <path d="M 280 340 L 400 480" stroke="#C4A574" stroke-opacity="0.35" stroke-width="1.5"/>
-    <path d="M 400 300 L 400 480" stroke="#C4A574" stroke-opacity="0.5" stroke-width="2"/>
-    <path d="M 520 340 L 400 480" stroke="#C4A574" stroke-opacity="0.35" stroke-width="1.5"/>
-    <path d="M 320 420 L 400 480" stroke="#C4A574" stroke-opacity="0.25" stroke-width="1"/>
-    <path d="M 480 420 L 400 480" stroke="#C4A574" stroke-opacity="0.25" stroke-width="1"/>
-    <circle cx="400" cy="480" r="14" fill="#1E3A2F" stroke="#C4A574" stroke-width="2.5"/>
-    <text x="400" y="260" text-anchor="middle" fill="#C4A574" fill-opacity="0.4" font-family="monospace" font-size="9" letter-spacing="3">AUTHORIZE</text>
+    <rect x="200" y="300" width="180" height="180" rx="2" fill="#4A6278" fill-opacity="0.12" stroke="#C4A574" stroke-opacity="0.25" stroke-width="1.5" transform="rotate(-8 290 390)"/>
+    <rect x="420" y="300" width="180" height="180" rx="2" fill="#4A6278" fill-opacity="0.08" stroke="#C4A574" stroke-opacity="0.2" stroke-width="1.5" transform="rotate(6 510 390)"/>
+    <path d="M 290 320 L 510 360" stroke="#C4A574" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="4 6"/>
+    <path d="M 290 460 L 510 420" stroke="#C4A574" stroke-opacity="0.4" stroke-width="1.5" stroke-dasharray="4 6"/>
+    <circle cx="400" cy="390" r="10" fill="#C4A574" fill-opacity="0.5"/>
+    <text x="400" y="520" text-anchor="middle" fill="#C4A574" fill-opacity="0.35" font-family="monospace" font-size="9" letter-spacing="2">INTERFACE</text>
   </g>
-  <text x="400" y="660" text-anchor="middle" fill="#FAF6EF" font-family="Georgia, serif" font-size="52" font-weight="600" letter-spacing="-1" >Judgment</text>
-  <text x="400" y="728" text-anchor="middle" fill="#FAF6EF" font-family="Georgia, serif" font-size="52" font-weight="600" letter-spacing="-0.5" font-style="italic">Completes Value</text>
+  <text x="400" y="660" text-anchor="middle" fill="#FAF6EF" font-family="Georgia, serif" font-size="52" font-weight="600" letter-spacing="-1" >Before the Model</text>
+  <text x="400" y="728" text-anchor="middle" fill="#FAF6EF" font-family="Georgia, serif" font-size="52" font-weight="600" letter-spacing="-0.5" font-style="italic">Responds</text>
   <line x1="320" y1="762" x2="480" y2="762" stroke="url(#gold02)" stroke-width="2"/>
-  <text x="400" y="800" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.88" font-family="Georgia, serif" font-size="22">Judgment-as-Product:</text>
-  <text x="400" y="834" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.88" font-family="Georgia, serif" font-size="22">Why Value Completes at Authorization</text>
+  <text x="400" y="820" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.88" font-family="Georgia, serif" font-size="22">Distortion at the</text>
+  <text x="400" y="854" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.88" font-family="Georgia, serif" font-size="22">Human–AI Interface</text>
   <text x="400" y="910" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.5" font-family="Georgia, serif" font-size="15" font-style="italic">
-    <tspan x="400" dy="0">Under generative abundance,</tspan>
-    <tspan x="400" dy="24">authorization completes value.</tspan>
+    <tspan x="400" dy="0">Misalignment often begins</tspan>
+    <tspan x="400" dy="24">before the model answers.</tspan>
   </text>
-  <rect x="280" y="1000" width="240" height="28" rx="1" fill="none" stroke="#1E3A2F" stroke-width="1.5"/>
-  <text x="400" y="1020" text-anchor="middle" fill="#1E3A2F" fill-opacity="0.95" font-family="monospace" font-size="10" letter-spacing="3">AI &amp; COGNITION</text>
+  <rect x="280" y="1000" width="240" height="28" rx="1" fill="none" stroke="#4A6278" stroke-width="1.5"/>
+  <text x="400" y="1020" text-anchor="middle" fill="#4A6278" fill-opacity="0.95" font-family="monospace" font-size="10" letter-spacing="3">LANGUAGE</text>
   <rect x="64" y="1100" width="672" height="1" fill="#F0E6D4" fill-opacity="0.12"/>
   <rect x="64" y="1104" width="672" height="2" fill="url(#gold02)" fill-opacity="0.6"/>
   <text x="400" y="1142" text-anchor="middle" fill="#C4A574" fill-opacity="0.7" font-family="monospace" font-size="11" letter-spacing="4">NLUCLOUD PRESS</text>

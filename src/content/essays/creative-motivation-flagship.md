@@ -623,4 +623,4 @@ The question is which motives will be strengthened, which will be commodified, w
 
 AI makes more making possible.
 
-But human creativity still begins with why something needs to be made — the question that closes a year of learning architecture, judgment, waiting, self-representation, and now, creative motive.
+But human creativity still begins with why something needs to be made — the question that closes a year of judgment, representation, learning architecture, waiting, latency, and now creative motive.

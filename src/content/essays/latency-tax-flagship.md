@@ -1,13 +1,13 @@
 ---
 title: "The AI Latency Tax: Hidden Costs and Temporal Inequality"
 description: "Latency is not merely a technical delay. It is a structural externality — uneven, cumulative, and hard to see."
-pubDate: 2026-04-01
+pubDate: 2026-05-01
 category: ai-society
 sourcePaper: ai-latency-tax
 sourceSection: "§1–8"
 status: published
 featured: false
-issueNumber: 4
+issueNumber: 5
 issueRole: cover
 frameworks: [ai-latency-tax, temporal-justice]
 ---

@@ -1,13 +1,13 @@
 ---
 title: "Before the Model Responds: Distortion at the Human–AI Interface"
 description: "Misalignment often begins before the model answers — in how we represent what we want, what we hide, and what we are not yet able to say clearly."
-pubDate: 2026-05-01
+pubDate: 2026-02-01
 category: language-understanding
 sourcePaper: self-distortion
 sourceSection: "§1–8"
 status: published
 featured: false
-issueNumber: 5
+issueNumber: 2
 issueRole: cover
 frameworks: [expression-distortion-cost, self-alignment-load, authenticity-cost-model]
 ---
@@ -556,47 +556,11 @@ It is the human–AI representational system.
 
 ## Why masks work with humans but fail with AI
 
-Human society is built around partial expression.
+Human society runs on partial expression — polite distortion, strategic vagueness, and self-protection that other humans often read through tone, history, and context.
 
-We rarely tell the whole truth of a request.
+A language model cannot reliably reconstruct what the user has hidden from the prompt. The more natural the interface feels, the more users assume human-like understanding — but natural language does not guarantee natural understanding.
 
-We say, “I’m just exploring options,” when we are afraid of choosing.
-
-We say, “I’m looking for efficiency,” when we are trying to avoid emotional exhaustion.
-
-We say, “I want objective advice,” when we want permission to do what we already feel.
-
-We say, “What’s the best strategy?” when we mean, “How can I win without paying a social cost I cannot tolerate?”
-
-Human listeners may detect some of this.
-
-They may sense hesitation.
-
-They may know our history.
-
-They may read the contradiction between words and posture.
-
-They may understand that “I’m fine” is not always a factual statement.
-
-AI has less access to these layers.
-
-It may infer some, but it cannot be relied upon to reconstruct what the user has hidden from the prompt, the context, or even conscious awareness.
-
-This creates a strange inversion.
-
-The more natural the interface feels, the more users may assume they can communicate as they do with humans.
-
-But natural language does not guarantee natural understanding.
-
-The model can process language.
-
-It does not automatically inherit the social depth that makes human indirectness work.
-
-This is why AI can punish masks functionally.
-
-Not because it exposes them morally.
-
-Because it has to operate on what they conceal.
+When the mask becomes the prompt, the model optimizes for the mask. AI can punish masks functionally, not morally, because it must operate on what they conceal.
 
 ## Before answering: clarification and better design
 

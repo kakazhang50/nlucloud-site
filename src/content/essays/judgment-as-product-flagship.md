@@ -1,13 +1,13 @@
 ---
 title: "Judgment-as-Product: Why Value Completes at Human Authorization"
 description: "Under generative abundance, value no longer completes at the moment of output. It completes when a human actor selects, validates, adopts, and stands behind a specific choice."
-pubDate: 2026-02-01
+pubDate: 2026-01-01
 category: ai-cognition
 sourcePaper: judgment-as-product
 sourceSection: "§1–8"
 status: published
 featured: false
-issueNumber: 2
+issueNumber: 1
 issueRole: cover
 frameworks: [judgment-as-product]
 ---
@@ -39,6 +39,8 @@ That act is not generation.
 It is judgment.
 
 And under generative abundance, judgment is where value becomes product.
+
+> **The output is generated. The product is authorized.**
 
 ## Output is no longer the same as product
 
@@ -117,8 +119,6 @@ It means that in AI-mediated production, value is not completed when an output i
 The generated artifact is material.
 
 The authorized judgment is the product.
-
-> **The output is generated. The product is authorized.**
 
 This does not mean that human judgment is morally superior in every case. It does not mean that AI cannot be useful, powerful, or accurate. It does not rest on nostalgia for human labor.
 
@@ -548,79 +548,13 @@ Judgment literacy asks: which outputs deserve to enter the world under my name, 
 
 That second question will matter more as models become better.
 
-## Why this matters for creators
+## Where judgment must sit: creators, organizations, and design
 
-For writers, designers, researchers, educators, and independent creators, generative AI changes the meaning of authorship.
+For writers, designers, researchers, and independent creators, the act of producing a first draft becomes less distinctive. The act of selecting, shaping, rejecting, integrating, and standing behind a final version becomes more distinctive. Anyone can generate ten versions. Not everyone can know which version is true to the work.
 
-The act of producing a first draft becomes less distinctive.
+For organizations, the question is not simply whether employees may use AI, but how generated material becomes authorized material — who reviews, who approves, who bears responsibility, and when human judgment is non-delegable. Without these rules, more material moves through the system while responsibility stays unclear.
 
-The act of selecting, shaping, rejecting, integrating, and standing behind a final version becomes more distinctive.
-
-This does not make creators less important.
-
-It changes where their importance sits.
-
-The creator’s value is increasingly expressed in taste, structure, framing, judgment, and responsibility. Anyone can generate ten versions. Not everyone can know which version is true to the work.
-
-For independent thinkers, this is especially important.
-
-AI can imitate form. It can produce fluent prose. It can generate plausible arguments. But it cannot decide what your intellectual position should be. It cannot know which claim you are willing to own. It cannot assume your long-term reputation.
-
-The creator’s product is no longer only the text.
-
-It is the judgment embodied in the text.
-
-## Why this matters for organizations
-
-For organizations, Judgment-as-Product changes AI governance.
-
-The question is not simply whether employees are allowed to use AI.
-
-The question is how generated material becomes authorized material.
-
-Organizations need clearer rules for:
-
-* which outputs require human review
-* who has authority to approve AI-assisted work
-* what level of verification is needed by domain
-* where AI use must be disclosed
-* how responsibility is assigned
-* when automation is acceptable
-* when human judgment is non-delegable
-* how review burden is distributed
-
-Without these rules, AI can create a dangerous illusion of efficiency.
-
-More material moves through the system, but responsibility remains unclear.
-
-The failure mode is not only bad output.
-
-It is unauthorized output entering consequential space.
-
-## Why this matters for AI product design
-
-AI products are often designed to maximize generation — more outputs, faster responses, more automation. But if judgment is the binding constraint, product design should not only optimize generation. It should support authorization.
-
-A judgment-centered AI product should help users answer:
-
-* What decision is this output meant to support?
-* What are the stakes?
-* What assumptions does this output rely on?
-* What might be wrong but hard to notice?
-* What needs expert verification?
-* What criteria should guide selection?
-* Who is responsible if this output is adopted?
-* Is this material ready for use, or only ready for review?
-
-The strongest AI systems may not be the ones that generate the most.
-
-They may be the ones that reduce judgment burden without hiding responsibility.
-
-This is a different design philosophy.
-
-The product should not merely produce candidates.
-
-It should help humans judge candidates better.
+For AI product design, the strongest systems may not generate the most. They may reduce judgment burden without hiding responsibility — helping users ask what stakes an output supports, what might be wrong but hard to notice, and whether material is ready for use or only for review.
 
 ## From output economy to judgment economy
 
@@ -679,15 +613,3 @@ The product is not the pile of drafts.
 The product is the authorized choice.
 
 And in the age of generative abundance, the most important human work may be knowing what deserves to carry consequence.
-
----
-
-## Source
-
-This essay is adapted from *Judgment-as-Product: The Binding Constraint of AI-Mediated Production*, an SSRN working paper by Liang Zhang.
-
-Read the full paper on SSRN.
-
-Frameworks: judgment-as-product
-
-这版可以作为 **NLUCloud《AI 与社会评论》Issue 02 · Cover Essay** 直接发布。整体比上一版更紧，概念识别度也更强。
