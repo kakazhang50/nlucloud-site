@@ -6,7 +6,7 @@ category: ai-society
 sourcePaper: ai-latency-tax
 sourceSection: "§1–8"
 status: published
-featured: true
+featured: false
 issueNumber: 4
 issueRole: cover
 frameworks: [ai-latency-tax, temporal-justice]

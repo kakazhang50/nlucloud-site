@@ -95,7 +95,7 @@ export const coreIssues: MagazineIssue[] = [
     theme: 'Misalignment often begins before the model answers — in how we represent what we want.',
     editorLede:
       'When AI outputs feel generic or misaligned, the problem is often traced to the model. But much failure is co-produced at the cognition–language interface — in expression distortion and self-alignment load.',
-    status: 'planned',
+    status: 'published',
     sourcePaper: 'self-distortion',
     ssrnId: '6534580',
     coverEssaySlug: 'self-distortion-flagship',
