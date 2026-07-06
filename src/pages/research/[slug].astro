@@ -4,6 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import EssayFeedItem from '@/components/EssayFeedItem.astro';
 import { formatDate } from '@/lib/site';
 import { getEssaysBySourcePaper } from '@/lib/content';
+import { getLexiconTitles } from '@/lib/lexicon';
 import { scholarlyArticleJsonLd, buildJsonLdGraph } from '@/lib/schema';
 import { site } from '@/lib/site';
 
@@ -15,6 +16,7 @@ export async function getStaticPaths() {
 const { paper } = Astro.props;
 const { Content } = await render(paper);
 const relatedEssays = await getEssaysBySourcePaper(paper.slug);
+const lexiconTitles = await getLexiconTitles(paper.data.frameworks);
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? `https://${site.domain}`;
 const pageUrl = new URL(`/research/${paper.slug}/`, Astro.site).href;
 const schemaExtra = [
@@ -69,13 +71,13 @@ const schemaExtra = [
       {
         paper.data.frameworks.length > 0 && (
           <div class="mt-10 border-t border-line pt-6">
-            <p class="folio mb-4">Frameworks</p>
+            <p class="folio mb-4">Lexicon</p>
             <ul class="space-y-2">
               {
                 paper.data.frameworks.map((fw) => (
                   <li>
-                    <a href={`/frameworks/${fw}/`} class="link-editorial">
-                      {fw}
+                    <a href={`/lexicon/${fw}/`} class="link-editorial">
+                      {lexiconTitles.get(fw)}
                     </a>
                   </li>
                 ))

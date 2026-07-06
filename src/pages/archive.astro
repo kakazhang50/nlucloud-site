@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { allIssues, issuePath } from '@/data/issues';
+import { siteIssues, issuePath } from '@/data/issues';
 import { getCoverEssayForIssue } from '@/lib/issues';
 
-const byYear = new Map<number, typeof allIssues>();
-for (const issue of allIssues) {
+const byYear = new Map<number, typeof siteIssues>();
+for (const issue of siteIssues) {
   const year = parseInt(issue.monthYear.split(' ')[1] ?? '2026', 10);
   const list = byYear.get(year) ?? [];
   list.push(issue);
@@ -13,7 +13,7 @@ for (const issue of allIssues) {
 const years = [...byYear.keys()].sort((a, b) => b - a);
 
 const issueRows = await Promise.all(
-  allIssues.map(async (issue) => ({
+  siteIssues.map(async (issue) => ({
     issue,
     essay: await getCoverEssayForIssue(issue),
   })),
@@ -22,7 +22,7 @@ const issueRows = await Promise.all(
 
 <BaseLayout
   title="Archive"
-  description="Complete issue archive — NLUCloud AI & Society Review."
+  description="Issue archive — NLUCloud AI & Society Review."
   breadcrumbs={[{ name: 'Archive', path: '/archive/' }]}
 >
   <div class="page-shell py-8 sm:py-10">
@@ -58,18 +58,24 @@ const issueRows = await Promise.all(
                     </h3>
                     <p class="mt-1 text-sm text-ink-muted">{issue.theme}</p>
                     <p class="mt-2">
-                      <span
-                        class:list={[
-                          'text-xs font-medium uppercase tracking-wide',
-                          issue.status === 'published' ? 'text-forest' : 'text-ink-faint',
-                        ]}
-                      >
-                        {issue.status === 'published' ? 'Published' : 'Forthcoming'}
-                      </span>
-                      <span class="mx-2 text-ink-faint" aria-hidden="true">·</span>
-                      <a href={issuePath(issue.number)} class="link-editorial text-xs">
-                        Issue page
-                      </a>
+                      {!essay && (
+                        <span class="text-xs font-medium uppercase tracking-wide text-ink-faint">
+                          Forthcoming
+                        </span>
+                      )}
+                      {essay && (
+                        <a href={issuePath(issue.number)} class="link-editorial text-xs">
+                          Issue page
+                        </a>
+                      )}
+                      {!essay && (
+                        <>
+                          <span class="mx-2 text-ink-faint" aria-hidden="true">·</span>
+                          <a href={issuePath(issue.number)} class="link-editorial text-xs">
+                            Issue page
+                          </a>
+                        </>
+                      )}
                     </p>
                   </article>
                 ))}

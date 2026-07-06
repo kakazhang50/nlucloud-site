@@ -2,13 +2,14 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ResearchListItem from '@/components/ResearchListItem.astro';
 import { getResearchPapers } from '@/lib/content';
+import { site } from '@/lib/site';
 
 const papers = await getResearchPapers();
 ---
 
 <BaseLayout
   title="Research"
-  description="Published research on SSRN — source papers behind NLU Cloud essays and frameworks."
+  description={`Published research on SSRN — source papers behind ${site.magazineName} essays and lexicon entries.`}
   breadcrumbs={[{ name: 'Research', path: '/research/' }]}
 >
   <div class="page-shell py-4 sm:py-5">

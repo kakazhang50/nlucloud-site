@@ -22,7 +22,6 @@ export interface MagazineIssue {
   lexiconSlugs: string[];
 }
 
-/** Issues 01–06: one flagship per SSRN working paper */
 export const coreIssues: MagazineIssue[] = [
   {
     number: 1,
@@ -122,7 +121,10 @@ export const coreIssues: MagazineIssue[] = [
   },
 ];
 
-/** Issues 07–16: extended editorial program (beyond initial SSRN sextet) */
+/** Issues listed on the public site (01–06). Extended program stays in repo docs only. */
+export const siteIssues: MagazineIssue[] = coreIssues;
+
+/** @internal Extended editorial program — not published as issue pages until activated. */
 export const extendedIssues: MagazineIssue[] = [
   {
     number: 7,
@@ -302,12 +304,12 @@ export function issuePath(number: number): string {
 }
 
 export function getCurrentIssue(): MagazineIssue {
-  const published = [...allIssues].reverse().find((i) => i.status === 'published');
-  return published ?? allIssues[0];
+  const published = [...siteIssues].reverse().find((i) => i.status === 'published');
+  return published ?? siteIssues[0];
 }
 
 export function getPublishedIssues(): MagazineIssue[] {
-  return allIssues.filter((i) => i.status === 'published');
+  return siteIssues.filter((i) => i.status === 'published');
 }
 
 export function formatIssueLabel(number: number): string {

@@ -1,29 +1,29 @@
-# NLU Cloud
-> Independent essays on AI, language, cognition, society, education, humanities, and everyday life.
+# NLUCloud AI & Society Review
+> Independent AI research and review on education, cognition, and society.
 
 Canonical site: https://nlucloud.com/
 Sitemap: https://nlucloud.com/sitemap-index.xml
 
 ## About
-NLU Cloud is an independent editorial magazine translating SSRN research into public essays on human–AI interaction. Research papers are authoritative sources; essays are editorial derivatives — often several per paper.
+NLUCloud AI & Society Review is an independent digital magazine. Each issue features one long-form cover essay translating SSRN research for a general readership. Research papers are authoritative sources; cover essays and lexicon entries are editorial derivatives.
 
 ## Author
-Liang Zhang · Independent Researcher
+Liang Zhang · Editor-in-Chief
 ORCID: https://orcid.org/0009-0002-0124-1706
 SSRN: https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7868315
 
 ## Primary sections
-- https://nlucloud.com/essays/ — Published editorial essays (six columns)
-- https://nlucloud.com/research/ — SSRN working paper index (6 papers)
-- https://nlucloud.com/frameworks/ — Named research frameworks (JAP, LMO, Waiting Tax, etc.)
-- https://nlucloud.com/editors-notes/ — Editor's commentary
+- https://nlucloud.com/issues/ — Monthly cover essay issues
+- https://nlucloud.com/essays/ — Published essays
+- https://nlucloud.com/lexicon/ — Named concepts (JAP, LMO, Waiting Tax, etc.)
+- https://nlucloud.com/research/ — SSRN working paper index
 
-## Published essays (editorial highlights)
-- https://nlucloud.com/essays/ai-as-orchestration-layer/ — AI as orchestration layer in education (Learning Model Orchestration)
-- https://nlucloud.com/essays/ai-generates-options-humans-complete-value/ — Judgment-as-Product: humans complete value
-- https://nlucloud.com/essays/waiting-is-not-free-time/ — AI Waiting Tax: waiting is not free time
+## Published cover essays
+- https://nlucloud.com/essays/ai-as-orchestration-layer/ — Issue 01: AI as orchestration layer in education
+- https://nlucloud.com/essays/ai-generates-options-humans-complete-value/ — Judgment-as-Product companion essay
+- https://nlucloud.com/essays/waiting-is-not-free-time/ — AI Waiting Tax companion essay
 
-## Research frameworks on this site
+## Key lexicon concepts
 - Judgment-as-Product (JAP) — judgment completes value under generative abundance
 - Learning Model Orchestration (LMO) — orchestrating learning models beyond personalization
 - AI Waiting Tax / AI Latency Tax — cognitive and structural costs of AI-mediated delay

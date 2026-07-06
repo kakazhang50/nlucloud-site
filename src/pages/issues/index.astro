@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { allIssues, issuePath } from '@/data/issues';
+import { site } from '@/lib/site';
+import { siteIssues, issuePath } from '@/data/issues';
 import { getCoverEssayForIssue } from '@/lib/issues';
 
 const rows = await Promise.all(
-  allIssues.map(async (issue) => ({
+  siteIssues.map(async (issue) => ({
     issue,
     essay: await getCoverEssayForIssue(issue),
   })),
@@ -13,7 +14,7 @@ const rows = await Promise.all(
 
 <BaseLayout
   title="Issues"
-  description="NLUCloud AI & Society Review — one cover essay per issue."
+  description={`${site.magazineName} — one cover essay per issue.`}
   breadcrumbs={[{ name: 'Issues', path: '/issues/' }]}
 >
   <div class="page-shell py-8 sm:py-10">
@@ -21,8 +22,7 @@ const rows = await Promise.all(
       <p class="folio mb-2">Issues</p>
       <p class="mb-8 max-w-prose text-sm leading-relaxed text-ink-muted">
         Each issue features one cover essay — a long-form editorial translation of published
-        research. Issues 01–06 map to six SSRN working papers; Issues 07–16 extend the editorial
-        program.
+        research, written for a general readership.
       </p>
 
       <div class="divide-y divide-line border-t border-line">
@@ -49,16 +49,6 @@ const rows = await Promise.all(
                 ) : (
                   <span class="text-ink-muted">Forthcoming: {issue.coverEssayTitle}</span>
                 )}
-              </p>
-              <p class="mt-2">
-                <span
-                  class:list={[
-                    'text-[11px] font-medium uppercase tracking-wide',
-                    issue.status === 'published' ? 'text-forest' : 'text-ink-faint',
-                  ]}
-                >
-                  {issue.status === 'published' ? 'Published' : 'Planned'}
-                </span>
               </p>
             </article>
           ))

@@ -4,13 +4,13 @@ import IssueBand from '@/components/IssueBand.astro';
 import EditorLede from '@/components/EditorLede.astro';
 import CoverStory from '@/components/CoverStory.astro';
 import { site } from '@/lib/site';
-import { allIssues, issuePath } from '@/data/issues';
+import { siteIssues, issuePath } from '@/data/issues';
 import { getCurrentCoverEssay } from '@/lib/issues';
 import { getPublishedFrameworks } from '@/lib/content';
 
 const { issue, essay } = await getCurrentCoverEssay();
 const lexicon = (await getPublishedFrameworks()).slice(0, 4);
-const forthcoming = allIssues.filter((i) => i.status === 'planned').slice(0, 3);
+const forthcoming = siteIssues.filter((i) => i.status === 'planned').slice(0, 3);
 ---
 
 <BaseLayout description={site.description}>

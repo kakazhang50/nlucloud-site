@@ -13,12 +13,8 @@ import { site } from '@/lib/site';
       <p class="folio mb-4">Masthead</p>
       <div class="prose-nlu">
         <h2>Publication</h2>
-        <p><strong>NLUCloud AI &amp; Society Review</strong></p>
-        <p>
-          An independent digital research and review magazine focused on the long-term impact of
-          artificial intelligence on education, knowledge production, cognition, and social
-          organization.
-        </p>
+        <p><strong>{site.magazineName}</strong></p>
+        <p>{site.description}</p>
 
         <h2>Editor-in-Chief</h2>
         <p>
@@ -31,22 +27,23 @@ import { site } from '@/lib/site';
 
         <h2>Format</h2>
         <p>
-          One cover essay per issue (2,500–4,500 words), translated from published SSRN working
-          papers and related research. Issues archive by year. A <a href="/lexicon/">Lexicon</a> of
-          named frameworks accompanies the essay series.
+          One cover essay per issue — long-form, English, for a general readership. Each issue
+          draws on published research, especially working papers on{' '}
+          <a href="/research/">SSRN</a>. A <a href="/lexicon/">Lexicon</a> of named concepts
+          accompanies the series.
         </p>
 
         <h2>Independence</h2>
         <p>
-          NLUCloud AI &amp; Society Review is an independent publication. It is not affiliated with
-          a university, government body, or peer-reviewed journal. Working papers on{' '}
-          <a href="/research/">SSRN</a> are authoritative research sources; cover essays are
-          editorial translations for a general readership.
+          {site.magazineName} is an independent publication. It is not affiliated with a
+          university, government body, or peer-reviewed journal. Cover essays are editorial
+          interpretations; the underlying research papers remain the authoritative academic
+          sources.
         </p>
 
-        <h2>Site</h2>
+        <h2>Web edition</h2>
         <p>
-          <a href="https://nlucloud.com/">nlucloud.com</a> — published by {site.siteName}.
+          <a href="https://nlucloud.com/">nlucloud.com</a>
         </p>
       </div>
     </div>

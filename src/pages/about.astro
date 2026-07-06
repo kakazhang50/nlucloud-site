@@ -10,31 +10,31 @@ import { site } from '@/lib/site';
       <div class="prose-nlu">
         <p>{site.description}</p>
 
-        <h2>Format</h2>
+        <h2>What we publish</h2>
         <p>
-          <strong>NLUCloud AI &amp; Society Review</strong> publishes one cover essay per issue (English,
-          2,500–4,500 words). Each issue translates a section of published SSRN research into a
-          standalone magazine essay. See the <a href="/issues/">issue archive</a> and{' '}
-          <a href="/masthead/">masthead</a>.
+          Each month, <strong>{site.magazineName}</strong> releases one cover essay — a
+          long-form argument on AI and human life, written for readers outside academia. The{' '}
+          <a href="/lexicon/">Lexicon</a> defines the concepts behind the essays. The{' '}
+          <a href="/research/">Research</a> section indexes the underlying SSRN working papers.
         </p>
 
-        <h2>Editor-in-Chief</h2>
+        <h2>Who reads it</h2>
         <p>
-          <strong>{site.author}</strong><br />
+          Educators, researchers, policy thinkers, and anyone trying to understand what changes
+          when AI becomes cheap — not only what it can generate, but what becomes scarce on the
+          human side: judgment, waiting, representation, learning design, creative motive.
+        </p>
+
+        <h2>Editor</h2>
+        <p>
+          <strong>{site.author}</strong>, Editor-in-Chief<br />
           <a href={`mailto:${site.authorEmail}`}>{site.authorEmail}</a><br />
           <a href={site.orcidUrl}>ORCID</a> · <a href={site.ssrnAuthorUrl}>SSRN</a>
         </p>
 
-        <h2>Research &amp; Lexicon</h2>
         <p>
-          <a href="/research/">SSRN working papers</a> are authoritative sources. Cover essays are
-          editorial translations. The <a href="/lexicon/">Lexicon</a> defines named frameworks from
-          this research program.
-        </p>
-
-        <p>
-          <a href="/editorial-policy/">Editorial policy</a> · <a href="/press/">NLUCloud Press</a> ·{' '}
-          <a href="/annual-review/">Annual Review 2026</a>
+          <a href="/masthead/">Masthead</a> · <a href="/editorial-policy/">Editorial policy</a> ·{' '}
+          <a href="/press/">NLUCloud Press</a> · <a href="/annual-review/">Annual Review 2026</a>
         </p>
       </div>
     </div>

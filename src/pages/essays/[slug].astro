@@ -7,6 +7,8 @@ import { getCategoryMeta } from '@/data/categories';
 import { getResearchPaper } from '@/lib/content';
 import { issuePath } from '@/data/issues';
 import { essaySourceAttribution } from '@/lib/editorial';
+import { getLexiconTitles } from '@/lib/lexicon';
+import { site } from '@/lib/site';
 
 export async function getStaticPaths() {
   const essays = await getCollection('essays', ({ data }) => data.status === 'published');
@@ -20,6 +22,9 @@ const { essay } = Astro.props;
 const { Content } = await render(essay);
 const cat = getCategoryMeta(essay.data.category);
 const paper = await getResearchPaper(essay.data.sourcePaper);
+const lexiconTitles = essay.data.frameworks?.length
+  ? await getLexiconTitles(essay.data.frameworks)
+  : new Map<string, string>();
 ---
 
 <BaseLayout
@@ -77,7 +82,7 @@ const paper = await getResearchPaper(essay.data.sourcePaper);
               </p>
               <p class="mt-3">
                 <a href={`/research/${paper.slug}/`} class="link-editorial text-sm">
-                  Research page on NLU Cloud
+                  Research page on {site.siteName}
                 </a>
                 <span class="mx-2 text-ink-muted" aria-hidden="true">·</span>
                 <a
@@ -97,11 +102,13 @@ const paper = await getResearchPaper(essay.data.sourcePaper);
         {
           essay.data.frameworks?.length ? (
             <p class="mt-4 text-xs">
-              Frameworks:{' '}
+              Lexicon:{' '}
               {essay.data.frameworks.map((fw, i) => (
                 <>
                   {i > 0 && ', '}
-                  <a href={`/frameworks/${fw}/`} class="text-forest hover:underline">{fw}</a>
+                  <a href={`/lexicon/${fw}/`} class="text-forest hover:underline">
+                    {lexiconTitles.get(fw)}
+                  </a>
                 </>
               ))}
             </p>

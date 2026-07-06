@@ -4,10 +4,9 @@ import { site } from '@/lib/site';
 const nav = [
   { href: '/', label: 'Home' },
   { href: '/issues/', label: 'Issues' },
+  { href: '/essays/', label: 'Essays' },
   { href: '/lexicon/', label: 'Lexicon' },
   { href: '/research/', label: 'Research' },
-  { href: '/archive/', label: 'Archive' },
-  { href: '/masthead/', label: 'Masthead' },
   { href: '/about/', label: 'About' },
 ];
 
@@ -30,7 +29,7 @@ const isHome = current === '/' || current === '';
           isHome ? 'py-4 sm:py-5' : 'py-2 sm:py-2.5',
         ]}
       >
-        {isHome && <p class="folio">NLUCloud AI &amp; Society Review</p>}
+        {isHome && <p class="folio">{site.magazineName}</p>}
         <a
           href="/"
           class:list={[
@@ -40,9 +39,13 @@ const isHome = current === '/' || current === '';
         >
           {site.siteName}
         </a>
-        {isHome && (
-          <p class="mt-1.5 max-w-md font-serif text-sm italic text-ink-muted">{site.tagline}</p>
-        )}
+        {
+          isHome ? (
+            <p class="mt-1.5 max-w-md font-serif text-sm italic text-ink-muted">{site.tagline}</p>
+          ) : (
+            <p class="mt-1 font-serif text-xs italic text-ink-muted">{site.magazineName}</p>
+          )
+        }
       </div>
     </div>
 

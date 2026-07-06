@@ -22,8 +22,11 @@ const sitemapConfig = {
     } else if (path.startsWith('/essays/')) {
       item.priority = 0.8;
       item.changefreq = 'monthly';
-    } else if (path.startsWith('/frameworks/')) {
+    } else if (path.startsWith('/lexicon/')) {
       item.priority = 0.75;
+      item.changefreq = 'monthly';
+    } else if (path.startsWith('/issues/')) {
+      item.priority = 0.85;
       item.changefreq = 'monthly';
     } else if (path === '/llms-full.txt' || path === '/llms.txt') {
       item.priority = 0.5;
