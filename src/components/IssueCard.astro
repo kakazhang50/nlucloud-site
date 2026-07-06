@@ -55,11 +55,13 @@ const href = issuePath(issue.number);
     overflow: hidden;
     border: 1px solid #d8d0c4;
     background: #faf6ef;
-    transition: box-shadow 0.25s ease;
+    box-shadow: 0 4px 16px rgba(21, 41, 33, 0.08);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
   }
 
   .issue-card-link:hover .issue-card-cover-wrap {
-    box-shadow: 0 8px 28px rgba(21, 41, 33, 0.12);
+    box-shadow: 0 12px 32px rgba(21, 41, 33, 0.16);
+    transform: translateY(-2px);
   }
 
   .issue-card-cover {

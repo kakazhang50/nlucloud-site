@@ -1,0 +1,170 @@
+---
+import { seasonOneGuide } from '@/data/seriesArc';
+import { getIssue, issuePath } from '@/data/issues';
+
+const steps = seasonOneGuide.steps.map((step) => ({
+  ...step,
+  issue: getIssue(step.issueNumber)!,
+}));
+---
+
+<section class="series-guide" aria-labelledby="series-guide-title">
+  <div class="series-guide-header">
+    <p class="folio">{seasonOneGuide.label} · Series Guide</p>
+    <h2 id="series-guide-title" class="series-guide-title">{seasonOneGuide.title}</h2>
+    <p class="series-guide-lede">{seasonOneGuide.lede}</p>
+    <p class="series-guide-thesis">{seasonOneGuide.thesis}</p>
+  </div>
+
+  <ol class="series-guide-steps">
+    {
+      steps.map(({ issueNumber, arc, thesis, issue }) => (
+        <li class="series-guide-step">
+          <span class="series-guide-marker" aria-hidden="true">
+            {String(issueNumber).padStart(2, '0')}
+          </span>
+          <div class="series-guide-step-body">
+            <p class="series-guide-arc">{arc}</p>
+            <h3 class="series-guide-step-title">
+              <a href={issuePath(issueNumber)}>{issue.title}</a>
+            </h3>
+            <p class="series-guide-step-thesis">{thesis}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+
+  <p class="series-guide-coda">{seasonOneGuide.coda}</p>
+</section>
+
+<style>
+  .series-guide {
+    border: 1px solid #d8d0c4;
+    background: linear-gradient(180deg, #faf8f4 0%, #f5f1ea 100%);
+    padding: 1.5rem 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .series-guide {
+      padding: 2rem 2.25rem;
+    }
+  }
+
+  .series-guide-header {
+    max-width: 42rem;
+  }
+
+  .series-guide-title {
+    margin-top: 0.5rem;
+    font-family: Fraunces, Georgia, serif;
+    font-size: 1.625rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #1a1816;
+  }
+
+  @media (min-width: 640px) {
+    .series-guide-title {
+      font-size: 1.875rem;
+    }
+  }
+
+  .series-guide-lede {
+    margin-top: 0.75rem;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: #5c5752;
+  }
+
+  .series-guide-thesis {
+    margin-top: 0.875rem;
+    padding-left: 0.875rem;
+    border-left: 3px solid #c4a574;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 1.0625rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: #1e3a2f;
+  }
+
+  .series-guide-steps {
+    margin-top: 1.75rem;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0;
+  }
+
+  @media (min-width: 768px) {
+    .series-guide-steps {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 2rem;
+    }
+  }
+
+  .series-guide-step {
+    display: grid;
+    grid-template-columns: 2.75rem 1fr;
+    gap: 0.75rem 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid #e8e2d8;
+  }
+
+  .series-guide-marker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #c4a574;
+    padding-top: 0.15rem;
+  }
+
+  .series-guide-arc {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8a847c;
+  }
+
+  .series-guide-step-title {
+    margin-top: 0.2rem;
+    font-family: Fraunces, Georgia, serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .series-guide-step-title a {
+    color: #1a1816;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .series-guide-step-title a:hover {
+    color: #1e3a2f;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .series-guide-step-thesis {
+    margin-top: 0.35rem;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    color: #5c5752;
+  }
+
+  .series-guide-coda {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #d8d0c4;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: #5c5752;
+  }
+</style>

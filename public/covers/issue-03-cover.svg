@@ -6,24 +6,53 @@
       <stop offset="55%" stop-color="#1E3A2F"/>
       <stop offset="100%" stop-color="#243D34"/>
     </linearGradient>
+    <radialGradient id="glow03" cx="50%" cy="32%" r="55%">
+      <stop offset="0%" stop-color="#3D5C5C" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#152921" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette03" cx="50%" cy="50%" r="72%">
+      <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.45"/>
+    </radialGradient>
+    <linearGradient id="spine03" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#3D5C5C" stop-opacity="0.15"/>
+    </linearGradient>
     <linearGradient id="gold03" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#A8895A"/>
-      <stop offset="50%" stop-color="#C4A574"/>
+      <stop offset="50%" stop-color="#D4BC8A"/>
       <stop offset="100%" stop-color="#A8895A"/>
     </linearGradient>
     <pattern id="weave03" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
-      <line x1="0" y1="0" x2="0" y2="24" stroke="#F0E6D4" stroke-opacity="0.03" stroke-width="1"/>
+      <line x1="0" y1="0" x2="0" y2="24" stroke="#F0E6D4" stroke-opacity="0.04" stroke-width="1"/>
     </pattern>
+    <pattern id="dots03" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.6" fill="#F0E6D4" fill-opacity="0.06"/>
+    </pattern>
+    <filter id="softGlow03" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   <rect width="800" height="1200" fill="url(#bg03)"/>
+  <rect width="800" height="1200" fill="url(#glow03)"/>
+  <rect width="800" height="1200" fill="url(#dots03)"/>
   <rect width="800" height="1200" fill="url(#weave03)"/>
+  <text x="620" y="560" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.055" font-family="Georgia, serif" font-size="320" font-weight="700">03</text>
+  <rect x="0" y="0" width="18" height="1200" fill="url(#spine03)"/>
+  <rect x="18" y="0" width="2" height="1200" fill="url(#gold03)" fill-opacity="0.55"/>
+  <rect width="800" height="1200" fill="url(#vignette03)"/>
   <rect x="64" y="72" width="672" height="3" fill="url(#gold03)"/>
-  <rect x="64" y="76" width="672" height="1" fill="#F0E6D4" fill-opacity="0.15"/>
-  <text x="400" y="118" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.72" font-family="Georgia, serif" font-size="13" letter-spacing="5.5">NLUCLOUD</text>
-  <text x="400" y="142" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.55" font-family="Georgia, serif" font-size="11" letter-spacing="3.8">AI &amp; SOCIETY REVIEW</text>
-  <text x="400" y="196" text-anchor="middle" fill="#C4A574" font-family="monospace" font-size="12" letter-spacing="4.2">ISSUE 03 · MARCH 2026</text>
-  
-  <g opacity="0.85">
+  <rect x="64" y="76" width="672" height="1" fill="#F0E6D4" fill-opacity="0.18"/>
+  <text x="688" y="108" text-anchor="end" fill="#C4A574" fill-opacity="0.75" font-family="monospace" font-size="11" letter-spacing="2">3 / 6</text>
+  <text x="400" y="118" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.82" font-family="Georgia, serif" font-size="13" letter-spacing="5.5">NLUCLOUD</text>
+  <text x="400" y="142" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.58" font-family="Georgia, serif" font-size="11" letter-spacing="3.8">AI &amp; SOCIETY REVIEW</text>
+  <text x="400" y="196" text-anchor="middle" fill="#D4BC8A" font-family="monospace" font-size="12" letter-spacing="4.2">ISSUE 03 · MARCH 2026</text>
+  <g filter="url(#softGlow03)">
+  <g opacity="0.92">
     <rect x="120" y="248" width="560" height="88" rx="2" fill="#3D5C5C" fill-opacity="0.18" stroke="#C4A574" stroke-opacity="0.25" stroke-width="1"/>
     <rect x="120" y="368" width="560" height="88" rx="2" fill="#3D5C5C" fill-opacity="0.12" stroke="#C4A574" stroke-opacity="0.2" stroke-width="1"/>
     <rect x="120" y="488" width="560" height="88" rx="2" fill="#3D5C5C" fill-opacity="0.08" stroke="#C4A574" stroke-opacity="0.15" stroke-width="1"/>
@@ -33,20 +62,21 @@
     <circle cx="600" cy="292" r="7" fill="#1E3A2F" stroke="#C4A574" stroke-width="1.5"/>
     <circle cx="360" cy="532" r="5" fill="#1E3A2F" stroke="#C4A574" stroke-width="1.5"/>
     <circle cx="440" cy="532" r="5" fill="#1E3A2F" stroke="#C4A574" stroke-width="1.5"/>
-  </g>
+  </g></g>
   <text x="400" y="660" text-anchor="middle" fill="#FAF6EF" font-family="Georgia, serif" font-size="52" font-weight="600" letter-spacing="-1" >Learning</text>
   <text x="400" y="728" text-anchor="middle" fill="#FAF6EF" font-family="Georgia, serif" font-size="52" font-weight="600" letter-spacing="-0.5" font-style="italic">Architecture</text>
-  <line x1="320" y1="762" x2="480" y2="762" stroke="url(#gold03)" stroke-width="2"/>
-  <text x="400" y="820" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.88" font-family="Georgia, serif" font-size="22">AI as an Orchestration</text>
-  <text x="400" y="854" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.88" font-family="Georgia, serif" font-size="22">Layer in Education</text>
-  <text x="400" y="910" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.5" font-family="Georgia, serif" font-size="15" font-style="italic">
+  <line x1="300" y1="762" x2="500" y2="762" stroke="url(#gold03)" stroke-width="2.5"/>
+  <circle cx="400" cy="762" r="4" fill="#D4BC8A" fill-opacity="0.85"/>
+  <text x="400" y="820" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.9" font-family="Georgia, serif" font-size="22">AI as an Orchestration</text>
+  <text x="400" y="854" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.9" font-family="Georgia, serif" font-size="22">Layer in Education</text>
+  <text x="400" y="910" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.55" font-family="Georgia, serif" font-size="15" font-style="italic">
     <tspan x="400" dy="0">When information is abundant,</tspan>
     <tspan x="400" dy="24">orchestration becomes the constraint.</tspan>
   </text>
-  <rect x="280" y="1000" width="240" height="28" rx="1" fill="none" stroke="#3D5C5C" stroke-width="1.5"/>
-  <text x="400" y="1020" text-anchor="middle" fill="#3D5C5C" fill-opacity="0.95" font-family="monospace" font-size="10" letter-spacing="3">AI &amp; EDUCATION</text>
-  <rect x="64" y="1100" width="672" height="1" fill="#F0E6D4" fill-opacity="0.12"/>
-  <rect x="64" y="1104" width="672" height="2" fill="url(#gold03)" fill-opacity="0.6"/>
-  <text x="400" y="1142" text-anchor="middle" fill="#C4A574" fill-opacity="0.7" font-family="monospace" font-size="11" letter-spacing="4">NLUCLOUD PRESS</text>
-  <text x="400" y="1168" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.35" font-family="Georgia, serif" font-size="11" font-style="italic">nlucloud.com</text>
+  <rect x="268" y="996" width="264" height="32" rx="2" fill="#3D5C5C" fill-opacity="0.12" stroke="url(#gold03)" stroke-width="1" stroke-opacity="0.45"/>
+  <text x="400" y="1018" text-anchor="middle" fill="#E8DCC8" font-family="monospace" font-size="10" letter-spacing="3">AI &amp; EDUCATION</text>
+  <rect x="64" y="1100" width="672" height="1" fill="#F0E6D4" fill-opacity="0.14"/>
+  <rect x="64" y="1104" width="672" height="2" fill="url(#gold03)" fill-opacity="0.75"/>
+  <text x="400" y="1142" text-anchor="middle" fill="#D4BC8A" fill-opacity="0.78" font-family="monospace" font-size="11" letter-spacing="4">NLUCLOUD PRESS</text>
+  <text x="400" y="1168" text-anchor="middle" fill="#F0E6D4" fill-opacity="0.38" font-family="Georgia, serif" font-size="11" font-style="italic">nlucloud.com</text>
 </svg>
