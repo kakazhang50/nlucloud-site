@@ -38,11 +38,13 @@ The question is not only how long a system takes.
 
 The question is who waits, how often, under what stakes, and with what consequences.
 
-That is the starting point of the AI Latency Tax.
+> **Latency is invisible until it is uneven — then it becomes a question of justice.**
+
+That is the starting point of the **AI Latency Tax**.
 
 ## From waiting experience to latency structure
 
-The AI Waiting Tax names the lived experience of waiting for AI.
+The **AI Waiting Tax** names the lived experience of waiting for AI.
 
 It begins with the human moment: the pause, the suspended attention, the interruption, the fragile thought held open while a system thinks, loads, renders, or fails to respond.
 
@@ -50,7 +52,7 @@ That experience matters.
 
 But experience is only the first layer.
 
-The AI Latency Tax extends the analysis from the individual to the structural. It asks how waiting costs are distributed across users, institutions, and societies. It asks whether time lost to AI systems is evenly shared or quietly shifted onto those with fewer resources. It asks whether responsiveness is becoming a privilege.
+The **AI Latency Tax** extends the analysis from the individual to the structural. It asks how waiting costs are distributed across users, institutions, and societies. It asks whether time lost to AI systems is evenly shared or quietly shifted onto those with fewer resources. It asks whether responsiveness is becoming a privilege.
 
 The distinction can be stated simply:
 
@@ -132,7 +134,7 @@ The AI Latency Tax has five core characteristics.
 
 They are what make latency more than a performance metric.
 
-## 1. Invisibility
+### 1. Invisibility
 
 Latency is often invisible because waiting feels normal.
 
@@ -154,7 +156,7 @@ Latency disappears into the background of digital life.
 
 This invisibility is one reason it is powerful. What is not measured is easily dismissed. What is dismissed is rarely governed.
 
-## 2. Cumulativeness
+### 2. Cumulativeness
 
 Latency often looks trivial because each instance is small.
 
@@ -184,7 +186,7 @@ The AI Latency Tax is cumulative because human attention does not reset perfectl
 
 Every pause leaves a trace.
 
-## 3. Asymmetry
+### 3. Asymmetry
 
 Latency is not equally distributed.
 
@@ -226,7 +228,7 @@ Latency becomes asymmetrical when the burden of waiting maps onto existing inequ
 
 That is when delay becomes stratification.
 
-## 4. Context-dependence
+### 4. Context-dependence
 
 Latency does not mean the same thing in every domain.
 
@@ -254,7 +256,7 @@ This is why latency cannot be governed only by average response time.
 
 Its meaning depends on stakes.
 
-## 5. Perceptual elasticity
+### 5. Perceptual elasticity
 
 Latency is also shaped by expectation.
 
@@ -336,7 +338,7 @@ Both are “connected.”
 
 But they do not inhabit the same digital reality.
 
-This is the second-generation digital divide:
+This is the **second-generation digital divide**:
 
 | Older divide               | Newer divide                                             |
 | -------------------------- | -------------------------------------------------------- |
@@ -402,11 +404,11 @@ Should time-sensitive AI systems disclose response-time disparities?
 
 These are not purely technical questions.
 
-They belong to temporal justice.
+They belong to **temporal justice**.
 
 ## Temporal justice
 
-Temporal justice treats time as a distributive resource.
+**Temporal justice** treats time as a distributive resource.
 
 It asks who controls time, who waits, whose time is protected, whose time is wasted, whose time is made productive, and whose time is treated as disposable.
 
@@ -459,7 +461,7 @@ But AI latency requires a complementary lens.
 
 The issue is not captured attention.
 
-It is suspended attention.
+It is **suspended attention**.
 
 Captured attention is attention consumed by content.
 
@@ -513,7 +515,7 @@ The user absorbs uncertainty.
 
 The user adapts behavior around system limits.
 
-This is why latency should be described as a socio-technical externality.
+This is why latency should be described as a **socio-technical externality**.
 
 It is not only a defect inside a machine. It is a burden shifted into human time.
 
@@ -531,7 +533,7 @@ The AI Latency Tax makes that difference visible.
 
 The AI Latency Tax can be understood through four layers.
 
-## 1. Conceptual layer: latency as externality
+### 1. Conceptual layer: latency as externality
 
 At the conceptual level, latency is not merely delay. It is the transfer of time cost from system to user.
 
@@ -539,19 +541,19 @@ A system may optimize for cost, scale, or throughput while pushing waiting onto 
 
 The user does not see the infrastructure decision. They experience only the pause.
 
-## 2. Experiential layer: latency as lived burden
+### 2. Experiential layer: latency as lived burden
 
 At the experiential level, latency fragments cognition, dilutes feedback, produces uncertainty, and triggers adaptation.
 
 It is felt as impatience, broken flow, loss of trust, anxiety, or task fatigue.
 
-## 3. Impact layer: latency across scales
+### 3. Impact layer: latency across scales
 
 At the impact level, latency moves from individuals to organizations and societies.
 
 It affects learning, work, care, institutional credibility, civic participation, and global digital inclusion.
 
-## 4. Normative layer: latency as governance issue
+### 4. Normative layer: latency as governance issue
 
 At the normative level, latency requires evaluation, accountability, and design standards.
 
@@ -563,23 +565,11 @@ These four layers help shift the discussion from speed to justice.
 
 ## How latency scales from micro to macro
 
-Latency begins small.
+At the micro level, a user waits, loses focus, retries, and trusts the system less.
 
-A user waits.
+At the organizational level, these delays create workflow drag — retries mistaken for engagement, outputs regenerated, context recovered, workarounds built.
 
-The user loses focus.
-
-The user retries.
-
-The user becomes less trusting.
-
-The task takes longer.
-
-That is the micro level.
-
-At the organizational level, these small delays create workflow drag. Teams spend more time waiting for AI tools, checking outputs, regenerating responses, recovering context, or building workarounds. Metrics may become distorted because retry behavior appears as engagement. Service quality may decline because users abandon slow interactions.
-
-At the societal level, latency compounds into unequal participation. Some groups receive fast and reliable AI-mediated services. Others experience slow, unstable, or degraded systems. The result is temporal stratification.
+At the societal level, latency compounds into unequal participation and temporal stratification.
 
 This progression can be summarized:
 
@@ -597,69 +587,19 @@ What begins as a pattern becomes a structure.
 
 ## Why averages are misleading
 
-Organizations often measure average latency.
+Organizations often measure average latency. That metric can hide inequality: acceptable averages may mask users who consistently wait longer, rural users on degraded access, free-tier students on slower feedback, or peripheral regions that normalize lag.
 
-Average response time can be useful, but it can also hide inequality.
+The better question is not only how fast the system is on average, but **who is slow for**.
 
-A system may have an acceptable average response time while certain users consistently wait longer.
-
-A public service may report satisfactory performance while rural users face degraded access.
-
-An educational AI platform may appear responsive overall while free-tier students experience slower feedback.
-
-A healthcare tool may perform well in flagship institutions while under-resourced clinics face delays.
-
-A global AI service may look fast in core markets while peripheral regions normalize lag.
-
-Average latency hides distribution.
-
-The right question is not only:
-
-How fast is the system on average?
-
-The better question is:
-
-Who is slow for?
-
-A justice-oriented latency audit should examine tail delays, group disparities, domain stakes, and user capacity to absorb waiting.
-
-In AI systems, the worst delays may matter more than the average.
-
-Especially when the users experiencing them have the least room to wait.
+A justice-oriented latency audit should examine tail delays, group disparities, domain stakes, and user capacity to absorb waiting — especially when the users experiencing the worst delays have the least room to wait.
 
 ## Essential services should not treat responsiveness as luxury
 
-The strongest ethical claim of the AI Latency Tax concerns essential services.
+The strongest ethical claim of the **AI Latency Tax** concerns essential services.
 
-In entertainment, speed tiers may be acceptable.
+In entertainment or casual productivity tools, speed tiers may be ordinary market segmentation. But when a system mediates education, healthcare, public services, emergency systems, legal aid, welfare access, or civic participation, responsiveness is part of service quality, fairness, and institutional duty.
 
-In consumer image generation, some waiting may be tolerable.
-
-In casual productivity tools, premium responsiveness may be ordinary market segmentation.
-
-But education, healthcare, public services, emergency systems, legal aid, welfare access, and civic participation are different.
-
-When a system mediates essential life functions, responsiveness is part of service quality.
-
-A slow system can weaken learning.
-
-A slow system can delay care.
-
-A slow system can discourage claims.
-
-A slow system can increase anxiety.
-
-A slow system can make public institutions feel unreachable.
-
-A slow system can impose costs on those already under pressure.
-
-In these contexts, responsiveness should not be treated merely as a convenience feature.
-
-It is part of fairness.
-
-It is part of access.
-
-It is part of institutional duty.
+A slow interface can weaken learning, delay care, discourage claims, increase anxiety, and impose costs on those already under pressure.
 
 The question is not whether every user must receive identical latency.
 
@@ -669,25 +609,9 @@ The question is whether critical systems are allowed to shift unacceptable time 
 
 Better AI design should not only pursue faster systems.
 
-It should pursue temporally fair systems.
+It should pursue temporally fair systems — systems that recognize user time has value and distribute latency burdens responsibly.
 
-A temporally fair AI system recognizes that user time has value and that latency burdens should be minimized, explained, and distributed responsibly.
-
-This implies several design principles.
-
-First, latency should be visible. Users should know whether they are waiting for seconds, minutes, or an uncertain duration.
-
-Second, latency should be bounded where possible. Uncertain waiting is more costly than predictable waiting.
-
-Third, latency should be context-aware. Systems used in high-stakes domains should face stricter responsiveness requirements.
-
-Fourth, latency should be auditable. Institutions should track whether certain groups, regions, languages, or access tiers experience systematically worse responsiveness.
-
-Fifth, latency should not force unnecessary attention holding. If a task can run in the background, the user should be released rather than kept waiting.
-
-Sixth, latency should support re-entry. When a delayed output returns, the system should help the user recover context and continue.
-
-Seventh, latency should not be hidden behind interface theater. Loading animations and “thinking” indicators may reduce uncertainty, but they should not obscure persistent system burden.
+That implies at least seven commitments: visible waiting times; bounded uncertainty where possible; stricter thresholds in high-stakes domains; auditable disparities across groups and tiers; background processing that releases user attention; re-entry support when outputs return; and interface design that explains delay rather than masking persistent burden.
 
 The design goal is not instant everything.
 
@@ -695,190 +619,38 @@ The design goal is responsible time allocation.
 
 ## What institutions should measure
 
-If AI latency is a structural externality, institutions need better measurement.
+If AI latency is a structural externality, institutions need better measurement — not only system speed, but user-side cost.
 
-They should not measure only system speed.
+A justice-oriented audit should ask:
 
-They should measure user-side cost.
-
-Relevant questions include:
-
-* How long do users wait across a complete workflow?
-* How often do delays occur during cognitively demanding tasks?
-* Which user groups experience the longest waits?
-* Are free, low-income, rural, disabled, non-dominant-language, or peripheral-region users slower served?
-* How often do users retry, refresh, abandon, or duplicate requests because of latency?
-* Does latency reduce learning persistence, care trust, application completion, or service satisfaction?
-* Are high-stakes tasks subject to stricter latency thresholds?
+* How long do users wait across a complete workflow, and which groups wait longest?
+* How often do delays during cognitively demanding tasks trigger retries, abandonment, or duplicated work?
+* Do free-tier, rural, disabled, or non-dominant-language users face systematically worse responsiveness?
+* Does latency reduce learning persistence, care trust, or application completion in high-stakes domains?
 * Is responsiveness being sold in ways that deepen inequality?
-* Can users leave safely during processing, or must they monitor the system?
-* Are latency metrics reported transparently in essential services?
+* Are latency metrics reported transparently where essential services are concerned?
 
-These are not merely UX questions.
+These are governance questions, not merely UX questions.
 
-They are governance questions.
-
-An institution that deploys AI should not be allowed to count only the benefits of automation while ignoring the time burden it imposes on users.
+An institution that deploys AI should not count only the benefits of automation while ignoring the time burden it imposes on users.
 
 If AI systems become infrastructure, latency becomes institutional responsibility.
 
 ## Why latency governance belongs in AI ethics
 
-AI ethics often focuses on bias, privacy, transparency, accountability, explainability, safety, and harm prevention.
+AI ethics rightly focuses on bias, privacy, transparency, safety, and harm. Latency should join that vocabulary.
 
-These remain central.
+A system can be unbiased in output yet unequal in responsiveness; accurate yet too slow for vulnerable users; transparent about decisions yet opaque about delays. Harm is not only what a system decides. Inequality is not only who gets access. Ethics becomes temporal when AI allocates waiting unevenly.
 
-But latency should be added to the governance vocabulary.
+## Normalization, acceleration, and the global gap
 
-A system can be unbiased in output but unequal in responsiveness.
+AI is marketed as pure acceleration. Sometimes it is. But acceleration for some often coexists with waiting for others — premium users move faster while free tiers, public agencies, and under-resourced clinics absorb delay.
 
-A system can be accurate but too slow for vulnerable users.
+The deepest risk is normalization. Users learn to wait. Institutions learn to ignore waiting. Vulnerable users internalize slower service as normal. Temporal inequality stabilizes not through dramatic exclusion, but through repeated micro-delays that no one counts.
 
-A system can be transparent about decisions but opaque about delays.
+The pattern also scales globally. AI infrastructure — data centers, networks, language optimization, market priority — is unevenly distributed. In core markets, AI feels like acceleration; in peripheral regions, conditional access. Dominant languages run smoother; less-supported languages wait more. This is a geopolitical map of time.
 
-A system can provide access while degrading the quality of participation through waiting.
-
-A system can meet technical benchmarks while shifting hidden time cost onto the public.
-
-Latency is therefore not outside ethics.
-
-It is one way ethics becomes temporal.
-
-The question is not only whether AI treats people fairly in what it decides.
-
-It is also whether AI treats people fairly in how it allocates time.
-
-## The global dimension
-
-The AI Latency Tax also has a global dimension.
-
-AI infrastructure is not evenly distributed. Data centers, high-speed networks, premium cloud access, language optimization, regulatory environments, and market priorities are concentrated unevenly.
-
-Users in some regions experience AI as immediate and fluid.
-
-Users elsewhere experience it as delayed, unstable, expensive, or partially available.
-
-This creates a global responsiveness gap.
-
-The risk is that the future of AI will be experienced differently across regions:
-
-In core markets, AI feels like acceleration.
-
-In peripheral markets, AI feels like conditional access.
-
-In wealthy institutions, AI feels like productivity.
-
-In under-resourced institutions, AI feels like another system to wait for.
-
-In dominant languages, AI feels smoother.
-
-In less-supported languages, AI feels slower, weaker, or less reliable.
-
-This is not only a technical map.
-
-It is a geopolitical map of time.
-
-The uneven distribution of AI responsiveness may become one of the subtle ways global digital hierarchy is reproduced.
-
-## The burden of normalized waiting
-
-One of the most dangerous outcomes is normalization.
-
-Users may learn to wait.
-
-Institutions may learn to ignore waiting.
-
-Designers may treat latency as unavoidable.
-
-Policymakers may fail to classify it as harm.
-
-Markets may convert faster response into premium status.
-
-Vulnerable users may internalize slower service as normal.
-
-This is how temporal inequality becomes stable.
-
-Not through dramatic exclusion, but through repeated small delays that no one counts.
-
-The AI Latency Tax matters because it gives language to this pattern.
-
-Once named, latency can be measured.
-
-Once measured, it can be compared.
-
-Once compared, it can be governed.
-
-Once governed, it can be made more just.
-
-## From acceleration mythology to temporal accountability
-
-AI is often marketed as a technology of acceleration.
-
-That mythology is powerful.
-
-AI will make work faster.
-
-AI will make learning faster.
-
-AI will make services faster.
-
-AI will make decisions faster.
-
-Sometimes it will.
-
-But acceleration for some can coexist with waiting for others.
-
-A system can accelerate organizational throughput while slowing individual users.
-
-A platform can speed up premium customers while delaying free users.
-
-A public agency can automate processes while making vulnerable citizens wait through opaque interfaces.
-
-A healthcare provider can deploy AI while shifting uncertainty onto patients.
-
-Acceleration is not evenly distributed by default.
-
-That is why the question should shift from speed to temporal accountability.
-
-Who benefits from acceleration?
-
-Who absorbs delay?
-
-Who can pay to avoid waiting?
-
-Who is required to remain patient?
-
-Who counts the lost time?
-
-These questions belong at the center of AI society debates.
-
-## What the AI Latency Tax reveals
-
-The AI Latency Tax reveals that time is becoming a hidden terrain of AI inequality.
-
-It shows that delay is not only technical.
-
-It is cognitive.
-
-It is emotional.
-
-It is organizational.
-
-It is institutional.
-
-It is geopolitical.
-
-It shows that access without responsiveness may still produce disadvantage.
-
-It shows that waiting can be commodified.
-
-It shows that essential services require stricter norms than entertainment platforms.
-
-It shows that AI governance should include time as a resource.
-
-It shows that the future of digital fairness will not be measured only by who receives what output, but also by who waits for it.
-
-This is why latency must be brought into the language of AI and society.
+Once named, latency can be measured, compared, and governed. The question should shift from speed alone to **temporal accountability**: who benefits from acceleration, who absorbs delay, who can pay to avoid waiting, and who counts the lost time?
 
 ## Conclusion: waiting is a structure
 
