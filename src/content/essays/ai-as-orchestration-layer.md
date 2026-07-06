@@ -6,7 +6,7 @@ category: ai-education
 sourcePaper: learning-model-orchestration
 sourceSection: "§4–6"
 status: published
-featured: true
+featured: false
 issueNumber: 1
 issueRole: cover
 frameworks: [learning-model-orchestration]

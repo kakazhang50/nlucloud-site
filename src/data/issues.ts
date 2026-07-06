@@ -47,7 +47,7 @@ export const coreIssues: MagazineIssue[] = [
     theme: 'Under generative abundance, value completes at accountable human authorization.',
     editorLede:
       'AI can generate ten drafts in a minute. It cannot decide which draft should represent you, your organization, or your work. That act — judgment — is where value becomes product.',
-    status: 'planned',
+    status: 'published',
     sourcePaper: 'judgment-as-product',
     ssrnId: '6534959',
     coverEssaySlug: 'judgment-as-product-flagship',
