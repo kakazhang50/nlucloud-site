@@ -6,6 +6,7 @@ import AuthorByline from '@/components/AuthorByline.astro';
 import { getCategoryMeta } from '@/data/categories';
 import { getResearchPaper } from '@/lib/content';
 import { issuePath } from '@/data/issues';
+import { essaySourceAttribution } from '@/lib/editorial';
 
 export async function getStaticPaths() {
   const essays = await getCollection('essays', ({ data }) => data.status === 'published');
