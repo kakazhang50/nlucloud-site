@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import CoverStory from '@/components/CoverStory.astro';
+import IssueCover from '@/components/IssueCover.astro';
 import ColumnMark from '@/components/ColumnMark.astro';
 import type { EssayCategory } from '@/content/config';
 import { getCategoryMeta } from '@/data/categories';
@@ -20,11 +21,13 @@ const { issue, essay } = await resolveIssuePage(issueNum);
 const cat = getCategoryMeta(issue.category as EssayCategory);
 const paper = issue.sourcePaper ? await getResearchPaper(issue.sourcePaper) : undefined;
 const lexiconTitles = await getLexiconTitles(issue.lexiconSlugs);
+const coverImage = issue.number === 1 ? '/covers/issue-01-cover.png' : undefined;
 ---
 
 <BaseLayout
   title={`${issue.label}: ${issue.title}`}
   description={issue.theme}
+  ogImage={coverImage}
   breadcrumbs={[
     { name: 'Issues', path: '/issues/' },
     { name: issue.label, path: issuePath(issue.number) },
@@ -44,6 +47,12 @@ const lexiconTitles = await getLexiconTitles(issue.lexiconSlugs);
 
   <div class="page-shell pb-8 pt-6 sm:pb-10 sm:pt-8">
     <div class="page-main space-y-8">
+      {coverImage && (
+        <div class="issue-cover-hero">
+          <IssueCover issue={issue} image={coverImage} priority />
+        </div>
+      )}
+
       <aside class="editor-lede" aria-label="Editor's note for this issue">
         <p class="editor-lede-kicker">In this issue</p>
         <p class="editor-lede-text">{issue.editorLede}</p>

@@ -15,6 +15,7 @@ interface Props {
   title?: string;
   description?: string;
   ogType?: 'website' | 'article';
+  ogImage?: string;
   breadcrumbs?: BreadcrumbItem[];
   article?: Omit<ArticleSchemaInput, 'url' | 'siteUrl'>;
   extraSchema?: Record<string, unknown>[];
@@ -25,6 +26,7 @@ const {
   title,
   description = site.description,
   ogType = 'website',
+  ogImage,
   breadcrumbs,
   article,
   extraSchema = [],
@@ -35,6 +37,7 @@ const fullTitle = pageTitle(title);
 const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? `https://${site.domain}`;
 const canonicalPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
 const canonicalUrl = new URL(canonicalPath, Astro.site).href;
+const ogImageUrl = ogImage ? new URL(ogImage, Astro.site).href : undefined;
 
 const schemaNodes: Record<string, unknown>[] = [...extraSchema];
 if (breadcrumbs?.length) {
@@ -75,7 +78,9 @@ const robotsContent = noindex ? 'noindex, follow' : 'index, follow, max-image-pr
     <meta property="og:description" content={description} />
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta name="twitter:card" content="summary" />
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl} />}
+    <meta name="twitter:card" content={ogImageUrl ? 'summary_large_image' : 'summary'} />
+    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl} />}
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <title>{fullTitle}</title>

@@ -1,0 +1,91 @@
+---
+import type { MagazineIssue } from '@/data/issues';
+
+interface Props {
+  issue: MagazineIssue;
+  /** Optional raster fallback (e.g. /covers/issue-01-cover.png) */
+  image?: string;
+  class?: string;
+  priority?: boolean;
+}
+
+const { issue, image, class: className, priority = false } = Astro.props;
+
+const coverSrc =
+  image ?? (issue.number === 1 ? '/covers/issue-01-cover.svg' : undefined);
+const coverAlt = `${issue.label}: ${issue.title} — ${issue.coverEssayTitle}`;
+---
+
+{
+  coverSrc ? (
+    <figure class:list={['issue-cover', className]}>
+      <a href={`/issues/${String(issue.number).padStart(2, '0')}/`} class="issue-cover-link">
+        <img
+          src={coverSrc}
+          alt={coverAlt}
+          width="800"
+          height="1200"
+          class="issue-cover-img"
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+        />
+      </a>
+      <figcaption class="issue-cover-caption">
+        <span class="folio">{issue.label}</span>
+        <span class="ornament mx-2" aria-hidden="true">·</span>
+        <span>{issue.monthYear}</span>
+      </figcaption>
+    </figure>
+  ) : null
+}
+
+<style>
+  .issue-cover {
+    margin: 0;
+    text-align: center;
+  }
+
+  .issue-cover-link {
+    display: block;
+    margin-inline: auto;
+    max-width: 22rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .issue-cover-link:hover {
+    transform: translateY(-2px);
+  }
+
+  .issue-cover-link:focus-visible {
+    outline: 2px solid #1e3a2f;
+    outline-offset: 4px;
+  }
+
+  .issue-cover-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #d8d0c4;
+    box-shadow:
+      0 1px 2px rgba(26, 24, 22, 0.06),
+      0 12px 40px rgba(21, 41, 33, 0.14);
+  }
+
+  .issue-cover-caption {
+    margin-top: 0.75rem;
+    font-size: 0.6875rem;
+    color: #8a847c;
+  }
+
+  :global(.issue-cover-hero) {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .issue-cover-link {
+      max-width: 26rem;
+    }
+  }
+</style>

@@ -2,6 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import IssueBand from '@/components/IssueBand.astro';
 import EditorLede from '@/components/EditorLede.astro';
+import IssueCover from '@/components/IssueCover.astro';
 import CoverStory from '@/components/CoverStory.astro';
 import { site } from '@/lib/site';
 import { siteIssues, issuePath } from '@/data/issues';
@@ -18,6 +19,10 @@ const forthcoming = siteIssues.filter((i) => i.status === 'planned').slice(0, 3)
 
   <div class="page-shell pb-6 pt-5 sm:pb-8 sm:pt-6">
     <div class="page-main space-y-8">
+      <div class="issue-cover-hero">
+        <IssueCover issue={issue} image="/covers/issue-01-cover.png" priority />
+      </div>
+
       <EditorLede />
 
       {essay && <CoverStory essay={essay} issue={issue} />}
