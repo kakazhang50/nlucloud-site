@@ -1,0 +1,149 @@
+---
+import { startHere } from '@/data/startHere';
+import { issuePath } from '@/data/issues';
+---
+
+<section class="start-here" aria-labelledby="start-here-title">
+  <div class="start-here-header">
+    <p class="folio">{startHere.kicker}</p>
+    <h2 id="start-here-title" class="start-here-title">{startHere.title}</h2>
+    <p class="start-here-lede">{startHere.lede}</p>
+  </div>
+
+  <ol class="start-here-list">
+    {
+      startHere.concepts.map((concept, index) => (
+        <li class="start-here-item">
+          <span class="start-here-index" aria-hidden="true">
+            {index + 1}
+          </span>
+          <div class="start-here-body">
+            <p class="start-here-abbr">{concept.abbreviation}</p>
+            <h3 class="start-here-concept-title">
+              <a href={`/lexicon/${concept.slug}/`}>{concept.title}</a>
+            </h3>
+            <p class="start-here-hook">{concept.hook}</p>
+            <p class="start-here-links">
+              <a href={`/lexicon/${concept.slug}/`} class="link-editorial text-xs">
+                Lexicon
+              </a>
+              <span class="mx-2 text-ink-muted" aria-hidden="true">·</span>
+              <a href={`/essays/${concept.essaySlug}/`} class="link-editorial text-xs">
+                Issue {String(concept.issueNumber).padStart(2, '0')} essay
+              </a>
+              <span class="mx-2 text-ink-muted" aria-hidden="true">·</span>
+              <a href={issuePath(concept.issueNumber)} class="link-editorial text-xs">
+                Issue page
+              </a>
+            </p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</section>
+
+<style>
+  .start-here {
+    border: 1px solid #d8d0c4;
+    background: #fff;
+    padding: 1.5rem 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .start-here {
+      padding: 1.75rem 2rem;
+    }
+  }
+
+  .start-here-header {
+    max-width: 40rem;
+  }
+
+  .start-here-title {
+    margin-top: 0.5rem;
+    font-family: Fraunces, Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #1a1816;
+  }
+
+  @media (min-width: 640px) {
+    .start-here-title {
+      font-size: 1.75rem;
+    }
+  }
+
+  .start-here-lede {
+    margin-top: 0.625rem;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: #5c5752;
+  }
+
+  .start-here-list {
+    margin-top: 1.25rem;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0;
+  }
+
+  .start-here-item {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.75rem 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid #e8e2d8;
+  }
+
+  .start-here-index {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #c4a574;
+    padding-top: 0.2rem;
+  }
+
+  .start-here-abbr {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8a847c;
+  }
+
+  .start-here-concept-title {
+    margin-top: 0.15rem;
+    font-family: Fraunces, Georgia, serif;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .start-here-concept-title a {
+    color: #1a1816;
+    text-decoration: none;
+  }
+
+  .start-here-concept-title a:hover {
+    color: #1e3a2f;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .start-here-hook {
+    margin-top: 0.35rem;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    color: #5c5752;
+  }
+
+  .start-here-links {
+    margin-top: 0.5rem;
+  }
+</style>

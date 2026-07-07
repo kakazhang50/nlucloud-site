@@ -19,9 +19,12 @@ SSRN: https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7868315
 - https://nlucloud.com/research/ — SSRN working paper index
 
 ## Published cover essays
-- https://nlucloud.com/essays/ai-as-orchestration-layer/ — Issue 01: AI as orchestration layer in education
-- https://nlucloud.com/essays/ai-generates-options-humans-complete-value/ — Judgment-as-Product companion essay
-- https://nlucloud.com/essays/waiting-is-not-free-time/ — AI Waiting Tax companion essay
+- https://nlucloud.com/essays/judgment-as-product-flagship/ — Issue 01: Judgment Completes Value
+- https://nlucloud.com/essays/self-distortion-flagship/ — Issue 02: Before the Model Responds
+- https://nlucloud.com/essays/ai-as-orchestration-layer/ — Issue 03: Learning Model Orchestration
+- https://nlucloud.com/essays/waiting-tax-flagship/ — Issue 04: The Waiting Tax
+- https://nlucloud.com/essays/latency-tax-flagship/ — Issue 05: The Latency Tax
+- https://nlucloud.com/essays/creative-motivation-flagship/ — Issue 06: Reweighted Motives
 
 ## Key lexicon concepts
 - Judgment-as-Product (JAP) — judgment completes value under generative abundance

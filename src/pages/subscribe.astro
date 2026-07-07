@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SubscribeEmbed from '@/components/SubscribeEmbed.astro';
+import { subscribe } from '@/data/subscribe';
+---
+
+<BaseLayout
+  title="Subscribe"
+  description="Get NLUCloud AI & Society Review cover essays by email — one issue per month."
+  breadcrumbs={[{ name: 'Subscribe', path: '/subscribe/' }]}
+>
+  <div class="page-shell py-8 sm:py-10">
+    <div class="page-narrow">
+      <p class="folio mb-3">Reader List</p>
+      <h1 class="font-display text-2xl font-semibold text-ink sm:text-3xl">
+        {subscribe.copy.page.heading}
+      </h1>
+      <div class="prose-nlu mt-6">
+        {subscribe.copy.page.body.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+      <SubscribeEmbed />
+    </div>
+  </div>
+</BaseLayout>

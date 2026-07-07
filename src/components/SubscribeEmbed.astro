@@ -1,0 +1,39 @@
+---
+import { site } from '@/lib/site';
+
+const { mailerLiteFormId } = site;
+const hasEmbed = Boolean(mailerLiteFormId?.trim());
+---
+
+<div class="subscribe-embed">
+  {
+    hasEmbed ? (
+      <>
+        <div class="ml-embedded" data-form={mailerLiteFormId} />
+        <script is:inline src="https://assets.mailerlite.com/js/w/webforms.min.js?v=1" />
+      </>
+    ) : (
+      <div class="subscribe-fallback">
+        <p class="text-sm leading-relaxed text-ink-soft">
+          The reader list form is being configured. Until it is live, email{' '}
+          <a href={`mailto:${site.authorEmail}?subject=Subscribe%20to%20NLUCloud`} class="link-editorial">
+            {site.authorEmail}
+          </a>{' '}
+          to receive new issue notifications.
+        </p>
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .subscribe-embed {
+    margin-top: 1.25rem;
+  }
+
+  .subscribe-fallback {
+    border: 1px solid #e8e2d8;
+    background: #faf8f4;
+    padding: 1rem 1.125rem;
+  }
+</style>

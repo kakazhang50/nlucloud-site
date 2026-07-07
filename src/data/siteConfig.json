@@ -10,5 +10,7 @@
   "orcid": "0009-0002-0124-1706",
   "orcidUrl": "https://orcid.org/0009-0002-0124-1706",
   "ssrnAuthorUrl": "https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7868315",
-  "cloudflareWebAnalyticsToken": ""
+  "cloudflareWebAnalyticsToken": "",
+  "mailerLiteSubscribeUrl": "",
+  "mailerLiteFormId": ""
 }

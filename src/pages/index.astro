@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import MagazineHero from '@/components/MagazineHero.astro';
+import StartHere from '@/components/StartHere.astro';
 import SeriesGuide from '@/components/SeriesGuide.astro';
+import SubscribeCallout from '@/components/SubscribeCallout.astro';
 import SupportCallout from '@/components/SupportCallout.astro';
 import IssueCard from '@/components/IssueCard.astro';
 import { site } from '@/lib/site';
@@ -23,6 +25,10 @@ const lexicon = (await getPublishedFrameworks()).slice(0, 4);
   <div class="page-shell pb-8 pt-5 sm:pb-10 sm:pt-6">
     <div class="page-main space-y-10">
       <MagazineHero issue={issue} essay={essay} />
+
+      <StartHere />
+
+      <SubscribeCallout variant="home" />
 
       <SeriesGuide />
 

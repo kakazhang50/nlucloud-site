@@ -4,6 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import ColumnMark from '@/components/ColumnMark.astro';
 import AuthorByline from '@/components/AuthorByline.astro';
 import SupportBlock from '@/components/SupportBlock.astro';
+import SubscribeBlock from '@/components/SubscribeBlock.astro';
 import { getCategoryMeta } from '@/data/categories';
 import { getResearchPaper } from '@/lib/content';
 import { issuePath } from '@/data/issues';
@@ -118,6 +119,8 @@ const lexiconTitles = essay.data.frameworks?.length
       </footer>
 
       <SupportBlock variant="essay" />
+
+      <SubscribeBlock variant="essay" />
     </div>
   </article>
 </BaseLayout>

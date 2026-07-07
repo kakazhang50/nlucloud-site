@@ -263,6 +263,10 @@
     @apply mt-10 border-t border-line pt-8 font-sans;
   }
 
+  .subscribe-block {
+    @apply mt-8 border-t border-line pt-8 font-sans;
+  }
+
   .link-editorial {
     @apply inline-flex items-center gap-1 font-sans text-sm font-medium text-forest underline-offset-4 hover:underline;
   }

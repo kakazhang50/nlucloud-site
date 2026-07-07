@@ -1,0 +1,72 @@
+---
+import Button from '@/components/Button.astro';
+import { subscribe } from '@/data/subscribe';
+import { site } from '@/lib/site';
+
+interface Props {
+  variant: 'home' | 'compact';
+}
+
+const { variant } = Astro.props;
+const copy = subscribe.copy.home;
+const href = site.mailerLiteSubscribeUrl?.trim() || '/subscribe/';
+const external = Boolean(site.mailerLiteSubscribeUrl?.trim());
+---
+
+<section
+  class:list={['subscribe-callout', variant === 'compact' && 'subscribe-callout-compact']}
+  aria-labelledby="subscribe-callout-title"
+>
+  <p class="folio">{copy.kicker}</p>
+  <h2 id="subscribe-callout-title" class="subscribe-callout-title">{copy.heading}</h2>
+  <p class="subscribe-callout-body">{copy.body}</p>
+  <div class="subscribe-callout-action">
+    <Button
+      href={href}
+      variant="primary"
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+    >
+      {subscribe.button}
+    </Button>
+  </div>
+</section>
+
+<style>
+  .subscribe-callout {
+    border: 1px solid #1e3a2f;
+    background: linear-gradient(180deg, #f3f7f4 0%, #e8f0eb 100%);
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+  }
+
+  @media (min-width: 640px) {
+    .subscribe-callout {
+      padding: 1.75rem 2rem;
+    }
+  }
+
+  .subscribe-callout-title {
+    margin-top: 0.5rem;
+    font-family: Fraunces, Georgia, serif;
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #1a1816;
+  }
+
+  .subscribe-callout-body {
+    margin: 0.625rem auto 0;
+    max-width: 32rem;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: #5c5752;
+  }
+
+  .subscribe-callout-action {
+    margin-top: 1.125rem;
+    display: flex;
+    justify-content: center;
+  }
+</style>

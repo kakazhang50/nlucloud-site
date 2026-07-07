@@ -1,0 +1,29 @@
+---
+import Button from '@/components/Button.astro';
+import { subscribe } from '@/data/subscribe';
+import { site } from '@/lib/site';
+
+interface Props {
+  variant: 'essay' | 'annualReview';
+}
+
+const { variant } = Astro.props;
+const copy = variant === 'annualReview' ? subscribe.copy.annualReview : subscribe.copy.essay;
+const href = site.mailerLiteSubscribeUrl?.trim() || '/subscribe/';
+const external = Boolean(site.mailerLiteSubscribeUrl?.trim());
+---
+
+<aside class="subscribe-block" aria-label="Subscribe to new issues">
+  <p class="folio mb-2">{copy.heading}</p>
+  <p class="text-sm leading-relaxed text-ink-soft">{copy.body}</p>
+  <div class="mt-4">
+    <Button
+      href={href}
+      variant="secondary"
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+    >
+      {subscribe.buttonShort}
+    </Button>
+  </div>
+</aside>

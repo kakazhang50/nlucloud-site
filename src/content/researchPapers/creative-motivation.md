@@ -4,7 +4,7 @@ description: "Advances the motivational reweighting thesis — generative AI red
 ssrnId: "6536198"
 ssrnUrl: "https://papers.ssrn.com/abstract=6536198"
 pubDate: 2026-04-07
-frameworks: ["motivational-reweighting", "expression-weight-restoration", "triadic-creative-motivation"]
+frameworks: ["motivational-reweighting", "expression-weight-restoration", "three-creative-motives"]
 views: 48
 downloads: 15
 ---
