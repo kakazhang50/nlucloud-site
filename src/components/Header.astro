@@ -1,5 +1,6 @@
 ---
 import { site } from '@/lib/site';
+import { support } from '@/data/support';
 
 const nav = [
   { href: '/', label: 'Home' },
@@ -8,6 +9,7 @@ const nav = [
   { href: '/lexicon/', label: 'Lexicon' },
   { href: '/research/', label: 'Research' },
   { href: '/about/', label: 'About' },
+  { href: support.url, label: 'Support', external: true },
 ];
 
 function isNavActive(href: string): boolean {
@@ -60,9 +62,11 @@ const isHome = current === '/' || current === '';
         nav.map((item) => (
           <a
             href={item.href}
+            target={item.external ? '_blank' : undefined}
+            rel={item.external ? 'noopener noreferrer' : undefined}
             class:list={[
               'text-[13px] font-medium tracking-wide transition',
-              isNavActive(item.href)
+              !item.external && isNavActive(item.href)
                 ? 'font-semibold text-forest'
                 : 'text-ink-muted hover:text-ink',
             ]}
