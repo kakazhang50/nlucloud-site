@@ -259,6 +259,10 @@
     @apply mt-10 border-t border-line pt-6 font-sans text-sm text-ink-muted;
   }
 
+  .support-block {
+    @apply mt-10 border-t border-line pt-8 font-sans;
+  }
+
   .link-editorial {
     @apply inline-flex items-center gap-1 font-sans text-sm font-medium text-forest underline-offset-4 hover:underline;
   }

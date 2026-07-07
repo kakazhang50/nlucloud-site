@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import SupportBlock from '@/components/SupportBlock.astro';
 import { site } from '@/lib/site';
 ---
 
@@ -31,6 +32,8 @@ import { site } from '@/lib/site';
           <a href={`mailto:${site.authorEmail}`}>{site.authorEmail}</a><br />
           <a href={site.orcidUrl}>ORCID</a> · <a href={site.ssrnAuthorUrl}>SSRN</a>
         </p>
+
+        <SupportBlock variant="about" />
 
         <p>
           <a href="/masthead/">Masthead</a> · <a href="/editorial-policy/">Editorial policy</a> ·{' '}

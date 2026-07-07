@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ColumnMark from '@/components/ColumnMark.astro';
 import AuthorByline from '@/components/AuthorByline.astro';
+import SupportBlock from '@/components/SupportBlock.astro';
 import { getCategoryMeta } from '@/data/categories';
 import { getResearchPaper } from '@/lib/content';
 import { issuePath } from '@/data/issues';
@@ -115,6 +116,8 @@ const lexiconTitles = essay.data.frameworks?.length
           ) : null
         }
       </footer>
+
+      <SupportBlock variant="essay" />
     </div>
   </article>
 </BaseLayout>

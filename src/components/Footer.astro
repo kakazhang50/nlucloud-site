@@ -1,6 +1,7 @@
 ---
 import { site } from '@/lib/site';
 import { currentIssue } from '@/data/magazine';
+import { support } from '@/data/support';
 
 const year = new Date().getFullYear();
 ---
@@ -28,6 +29,18 @@ const year = new Date().getFullYear();
         <span class="ornament" aria-hidden="true">·</span>
         <a href="/privacy/" class="hover:text-forest">Privacy</a>
       </div>
+      <p class="mt-4 text-xs leading-relaxed text-ink-faint">
+        <a
+          href={support.url}
+          class="text-ink-muted hover:text-forest"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {support.copy.footer.link}
+        </a>
+        <span class="mx-2 ornament" aria-hidden="true">·</span>
+        {support.copy.footer.sub}
+      </p>
       <p class="folio mt-5">
         © {year} {site.author} · NLUCloud Press
       </p>

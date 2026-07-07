@@ -1,0 +1,66 @@
+---
+import Button from '@/components/Button.astro';
+import { support } from '@/data/support';
+
+const copy = support.copy.home;
+---
+
+<section class="support-callout" aria-labelledby="support-callout-title">
+  <p class="folio">{copy.kicker}</p>
+  <h2 id="support-callout-title" class="support-callout-title">{copy.heading}</h2>
+  {copy.body.map((paragraph) => <p class="support-callout-body">{paragraph}</p>)}
+  <div class="support-callout-action">
+    <Button href={support.url} variant="secondary" target="_blank" rel="noopener noreferrer">
+      {support.button.default}
+    </Button>
+  </div>
+</section>
+
+<style>
+  .support-callout {
+    border: 1px solid #d8d0c4;
+    background: #faf8f4;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+  }
+
+  @media (min-width: 640px) {
+    .support-callout {
+      padding: 2rem 2.5rem;
+    }
+  }
+
+  .support-callout-title {
+    margin-top: 0.5rem;
+    font-family: Fraunces, Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #1a1816;
+  }
+
+  @media (min-width: 640px) {
+    .support-callout-title {
+      font-size: 1.75rem;
+    }
+  }
+
+  .support-callout-body {
+    margin: 0.75rem auto 0;
+    max-width: 36rem;
+    font-family: Newsreader, Georgia, serif;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: #5c5752;
+  }
+
+  .support-callout-body + .support-callout-body {
+    margin-top: 0.5rem;
+  }
+
+  .support-callout-action {
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: center;
+  }
+</style>

@@ -1,0 +1,50 @@
+---
+import Button from '@/components/Button.astro';
+import { support } from '@/data/support';
+
+interface Props {
+  variant: 'essay' | 'about';
+}
+
+const { variant } = Astro.props;
+const copy = support.copy[variant];
+const buttonLabel = variant === 'about' ? support.button.about : support.button.default;
+---
+
+{
+  variant === 'essay' ? (
+    <aside class="support-block" aria-label="Support the publication">
+      <p class="folio mb-3">{copy.heading}</p>
+      {copy.body.map((paragraph) => (
+        <p class="text-sm leading-relaxed text-ink-soft">{paragraph}</p>
+      ))}
+      <div class="mt-5">
+        <Button
+          href={support.url}
+          variant="secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {buttonLabel}
+        </Button>
+      </div>
+    </aside>
+  ) : (
+    <>
+      <h2>{copy.heading}</h2>
+      {copy.body.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+      <p>
+        <Button
+          href={support.url}
+          variant="secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {buttonLabel}
+        </Button>
+      </p>
+    </>
+  )
+}
