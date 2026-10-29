@@ -1,0 +1,25 @@
+Self-hosted webfonts for nlucloud.com.
+Font files are served from this site as woff2.
+
+These families are licensed under the SIL Open Font License, Version 1.1.
+The full license text for each family is in this directory.
+
+DM Sans
+  Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts)
+  License: DM-Sans-OFL.txt
+  Packaged via @fontsource-variable/dm-sans
+
+Fraunces
+  Copyright 2020 The Fraunces Project Authors (https://github.com/undercasetype/Fraunces)
+  License: Fraunces-OFL.txt
+  Packaged via @fontsource-variable/fraunces
+
+Newsreader
+  Copyright 2020 The Newsreader Project Authors (https://github.com/productiontype/Newsreader)
+  License: Newsreader-OFL.txt
+  Packaged via @fontsource-variable/newsreader
+
+IBM Plex Mono
+  Copyright 2017 IBM Corp.
+  License: IBM-Plex-Mono-OFL.txt
+  Packaged via @fontsource/ibm-plex-mono
